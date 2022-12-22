@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOTSTRAP CSS LINK START -->
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css" />
+    <!-- BOOTSTRAP CSS LINK END -->
+
+    <!-- BOOTSTRAP JS LINK START -->
+    <script src="../Common/js/bootstrap.bundle.min.js"></script>
+    <!-- BOOTSTRAP JS LINK END -->
+
+    <!-- CSS FILE LINK START -->
+    <link rel="stylesheet" href="css/company.css" />
+    <!-- CSS FILE LINK END -->
+
+    <!-- ANIMATE CSS LINK START-->
+    <link rel="stylesheet" href="../Common/css/animate.min.css">
+    <!-- ANIMATE CSS LINK END-->
+
+    <!-- SWEETALER JS LINK START -->
+    <script src="../Common/js/sweetalert.min.js"></script>
+    <!-- SWEETALER JS LINK END -->
+
+    <title>Company</title>
+  </head>
+  <body>
+    <div class="container bg-white main-box">
+      <!-- NAVBAR CODE START -->
+      <nav class="navbar navbar-expand-lg navbar-info">
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand">Brand Logo</a>
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="navbar-nav w-100 justify-content-end">
+              <a href="#" class="nav-link">Home</a>
+              <a href="#" class="nav-link">About</a>
+              <a href="#" class="nav-link">Portfolio</a>
+              <a href="#" class="nav-link">Contact</a>
+              <a href="#" class="nav-link btn signup-btn bg-info">Sign Up</a>
+              <a href="#" class="nav-link btn d-none login-btn bg-info">Sign In</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- NAVBAR CODE END -->
+      <div class="row">
+        <div class="col-md-6">
+          <!-- LOGIN CODE START -->
+          <div class="login-box active">
+            <h2 class="mb-3">Wel Come</h2>
+            <form class="login-form">
+              <label for="brand-code">Brand Code</label>
+              <input type="text" required id="brand-code" class="form-control mb-3" />
+              <label for="username">User Name</label>
+              <input type="text" required id="username" class="form-control mb-3" />
+              <label for="password">Password</label>
+              <input type="password" required id="password" class="form-control mb-3" />
+              <div align="end">
+                <a href="#"  class="text-info">Student Login Form</a>
+              </div>
+              <button class="btn mt-3 mb-3" id="form-login-btn">Sign In</button>
+            </form>
+          </div>
+          <!-- LOGIN CODE END -->
+          <!-- SIGN UP CODE START -->
+          <div class="signup-box">
+            <form class="signup-form">
+              <label for="s-brand-code">Brand Code</label>
+              <input type="text" required id="s-brand-code" class="form-control mb-3" />
+              <label for="brand-name">Brand Name</label>
+              <input type="text" required id="brand-name" class="form-control mb-3" />
+              <label for="website">Website</label>
+              <input type="text" required id="website" class="form-control mb-3" />
+              <label for="contact">Contact</label>
+              <input type="text" required id="contact" class="form-control mb-3" />
+              <label for="address">Address</label>
+              <textarea id="address" required rows="1" cols="10" class="form-control mb-3"></textarea>
+              <label for="s-username">Username</label>
+              <input type="text" required id="s-username" class="form-control mb-3" />
+              <label for="s-password">Password</label>
+              <input type="password" required id="s-password" class="form-control mb-3" />
+              <button class="btn" id="form-signup-btn" >Sign Up</button>
+            </form>
+          </div>
+          <!-- SIGN UP CODE END -->
+        </div>
+        <div class="col-md-6">
+          <img src="round.gif" class="w-100 h-100">
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- JAVASCRIPT FILE LINK START -->
+  <script src="js/index.js"></script>
+  <!-- JAVASCRIPT FILE LINK END -->
+</html>

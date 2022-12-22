@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOTSTARP CSS LINK START -->
+    <link rel="stylesheet" href="../Common/css/bootstrap.min.css" />
+    <!-- BOOTSTARP CSS LINK END -->
+
+    <!-- BOOTSTARP JS LINK START -->
+    <script src="../Common/js/bootstrap.bundle.min.js"></script>
+    <!-- BOOTSTARP JS LINK END -->
+
+    <!-- CSS LINK START -->
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <!-- CSS LINK END -->
+
+    <!-- ANIMATE CSS LINK START -->
+    <link rel="stylesheet" href="../Common/css/animate.min.css" />
+    <!-- ANIMATE CSS LINK END -->
+
+    <!-- SWEETALERT JS LINK START -->
+    <script src="../Common/js/sweetalert.min.js"></script>
+    <!-- SWEETALERT JS LINK END -->
+
+    <!-- FONT AWESOME LINK START -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- FONT AWESOME LINK END -->
+
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="side-nav">
+      <div class="profile-pic"></div>
+      <ul class="list-group">
+        <li class="list-group-item"><i class="fa-solid fa-house"></i>Home</li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-table-columns"></i>Dashboard
+        </li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-address-card"></i>About Us
+        </li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-briefcase"></i>Portfolio
+        </li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-code"></i>Developers
+        </li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-address-book"></i>Contact
+        </li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-calendar-minus"></i>Menual
+        </li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-network-wired"></i>Site Intro
+        </li>
+      </ul>
+      <button id="log-out-btn">Log Out</button>
+    </div>
+    <div class="container-fluid main-box">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 mt-1 p-0">
+          <ul class="list-group brand-box">
+            <li class="list-group-item">
+              <h1 id="brand-name"></h1>
+            </li>
+          </ul>
+          <div class="row mt-3">
+            <div class="col-md-4 teacher-box">
+              <ul class="list-group">
+                <li class="list-group-item">Teacher</li>
+              </ul>
+              <div class="content-box">
+                <div class="number-box">200</div>
+              </div>
+            </div>
+            <div class="col-md-4 teacher-box">
+              <ul class="list-group">
+                <li class="list-group-item">Students</li>
+              </ul>
+              <div class="content-box">
+                <div class="number-box">1600</div>
+              </div>
+            </div>
+            <div class="col-md-4 teacher-box">
+              <ul class="list-group">
+                <li class="list-group-item">Subject</li>
+              </ul>
+              <div class="content-box">
+                <div class="number-box">6</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-4">
+              <ul class="list-group">
+                <li class="list-group-item text-center">
+                  <h3>Create Subject</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#create-subject">Create Subject</button>
+                  </h2>
+                  <div class="accordion-collapse collapse" id="create-subject">
+                    <div class="accordion-body">
+                      <form>
+                        <input type="text" class="form-control subject mb-3" placeholder="Subject Name">
+                        <div align = "end">
+                        <button class="btn subject-btn">Store Subject</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <ul class="list-group">
+                <li class="list-group-item text-center">
+                  <h3>Create Questions</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#create-question">Create Subject</button>
+                  </h2>
+                  <div class="accordion-collapse collapse" id="create-question">
+                    <div class="accordion-body">
+                      <form>
+                        <select name="" id="" class="form-select mb-3">
+                          <option value="choose subject">Choose Subject</option>
+                        </select>
+                        <label for="question">Enter your Question here !</label>
+                        <input type="text" class="form-control subject mb-3" id="question">
+                        <label for="option-one">Option-1</label>
+                        <input type="text" class="form-control subject mb-3" id="option-one">
+                        <label for="option-two">Option-2</label>
+                        <input type="text" class="form-control subject mb-3" id="option-two">
+                        <label for="option-three">Option-3</label>
+                        <input type="text" class="form-control subject mb-3" id="option-three">
+                        <label for="option-four">Option-4</label>
+                        <input type="text" class="form-control subject mb-3" id="option-four">
+                        <label for="correct-answer">Correct Answer</label>
+                        <input type="text" class="form-control subject mb-3" id="correct-answer">
+                        <div align = "end">
+                        <button class="btn">Store Question</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-4">
+              <ul class="list-group">
+                <li class="list-group-item text-center">
+                  <h3>Show Subject</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#show-subject">
+                      Update and Delete Subject!
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse collapse show" id="show-subject">
+                    <div class="accordion-body">
+                      <div class="visible-subject">
+                        <!-- <div  class="d-flex justify-content-between align-items-center">
+                          <h3>Physics</h3>
+                          <div>
+                            <i class="fa fa-edit mx-2" style="font-size: 22px;"></i>
+                            <i class="fa fa-save mx-2 d-none" style="font-size: 22px;"></i>
+                            <i class="fa fa-trash mx-2" style="font-size: 22px;"></i>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <ul class="list-group">
+                <li class="list-group-item text-center">
+                  <h3>Create Questions</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#show-question">Create Subject</button>
+                  </h2>
+                  <div class="accordion-collapse collapse" id="show-question">
+                    <div class="accordion-body">
+                      <form>
+                        <select name="" id="" class="form-select mb-3">
+                          <option value="choose subject">Choose Subject</option>
+                        </select>
+                        <label for="question">Enter your Question here !</label>
+                        <input type="text" class="form-control subject mb-3" id="question">
+                        <label for="option-one">Option-1</label>
+                        <input type="text" class="form-control subject mb-3" id="option-one">
+                        <label for="option-two">Option-2</label>
+                        <input type="text" class="form-control subject mb-3" id="option-two">
+                        <label for="option-three">Option-3</label>
+                        <input type="text" class="form-control subject mb-3" id="option-three">
+                        <label for="option-four">Option-4</label>
+                        <input type="text" class="form-control subject mb-3" id="option-four">
+                        <label for="correct-answer">Correct Answer</label>
+                        <input type="text" class="form-control subject mb-3" id="correct-answer">
+                        <div align = "end">
+                        <button class="btn">Store Question</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- DASHBOARD JS FILE LINK START -->
+  <script src="js/dashboard.js"></script>
+  <!-- DASHBOARD JS FILE LINK END -->
+</html>
