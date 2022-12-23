@@ -29,6 +29,7 @@ log_out_btn.addEventListener("click", (e) => {
 let visibleSubject = document.querySelector(".visible-subject");
 let inputSubjectValue = document.querySelector(".subject");
 let subjectBtn = document.querySelector(".subject-btn");
+let allSubject = [];
 subjectBtn.addEventListener("click", (e) => {
   e.preventDefault();
   StoreSubjectBtn();
@@ -40,13 +41,17 @@ const StoreSubjectBtn = () => {
   } else {
     swal("Subject Name is empty!", "Please Enter a Subject Name !", "warning");
   }
+  updateSubject();
 };
 
-const newSubject = () => {
-  //function call
+const newSubject = (subject,index) => {         //function call
+  let subject_name = inputSubjectValue.value;
+  if(subject){
+    subject_name = subject.subjectName;
+  }
   visibleSubject.innerHTML += `
-  <div  class="d-flex justify-content-between align-items-center">
-    <h3>${inputSubjectValue.value}</h3>
+  <div  class="d-flex subject-box justify-content-between align-items-center">
+    <h3>${subject_name}</h3>
     <div>
       <i class="fa fa-edit mx-2" style="font-size: 22px;"></i>
       <i class="fa fa-save mx-2 d-none" style="font-size: 22px;"></i>
@@ -55,5 +60,25 @@ const newSubject = () => {
   </div>
   `;
 };
+
+if(localStorage.getItem(brandcode+"_allSubject") != null){
+  allSubject = JSON.parse(localStorage.getItem(brandcode+"_allSubject"));
+  allSubject.forEach((subject , index)=>{
+    newSubject(subject,index);
+  })
+}
+
+function updateSubject(){
+  let subjectBox = visibleSubject.querySelectorAll(".subject-box");
+  let i;
+  allSubject = [];
+  for(i=0; i<subjectBox.length; i++){
+    let h3 = subjectBox[i].getElementsByTagName("H3");
+    allSubject.push({
+      subjectName : h3[0].innerHTML
+    });
+  }
+  localStorage.setItem(brandcode+"_allSubject" , JSON.stringify(allSubject));
+}
 
 //SUBJECT CODING END
