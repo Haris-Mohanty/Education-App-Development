@@ -32,7 +32,7 @@ log_out_btn.addEventListener("click", (e) => {
 let visibleSubject = document.querySelector(".visible-subject");
 let inputSubjectValue = document.querySelector(".subject");
 let subjectBtn = document.querySelector(".subject-btn");
-//CREATE A EMPTY ARRAY TO PUSH OBJECT
+//Create a empty array to push objects
 let allSubject = [];
 //STORE BTN BUTTON
 subjectBtn.addEventListener("click", (e) => {
@@ -42,6 +42,7 @@ subjectBtn.addEventListener("click", (e) => {
 const StoreSubjectBtn = () => {
   if (inputSubjectValue.value != "") {
     newSubject(); //Create a function
+    swal("Congrats!", "Your Subject has been stored successful !", "success");
     inputSubjectValue.value = "";
   } else {
     swal("Subject Name is empty!", "Please Enter a Subject Name !", "warning");
@@ -49,22 +50,22 @@ const StoreSubjectBtn = () => {
   updateSubject();
 };
 
-const newSubject = (subject,index) => {         //CALL ABOVE FUNCTION NEWSUBJECT()
+const newSubject = (subject,index) => {         //Call the above function newSubject()
   let subject_name = inputSubjectValue.value;
   if(subject){
     subject_name = subject.subjectName;
   }
   visibleSubject.innerHTML += `
   <div  class="d-flex subject-box justify-content-between align-items-center">
-    <h3>${subject_name}</h3>
+    <h3 style="font-size:20px" index='${index}'>${subject_name}</h3>
     <div>
-      <i class="fa fa-edit mx-2" style="font-size: 22px;"></i>
-      <i class="fa fa-save mx-2 d-none" style="font-size: 22px;"></i>
+      <i class="fa fa-edit edit-btn mx-2" style="font-size: 22px;"></i>
+      <i class="fa fa-save save-btn mx-2 d-none" style="font-size: 22px;"></i>
       <i class="fa fa-trash del-btn mx-2" style="font-size: 22px;"></i>
     </div>
   </div>
   `;
-//SUBJECT DELETE CODE START
+//SUBJECT "DELETE" CODE START
 let delAllBtn = visibleSubject.querySelectorAll(".del-btn");
 let i;
 for (i=0 ; i<delAllBtn.length ; i++){
@@ -80,8 +81,8 @@ for (i=0 ; i<delAllBtn.length ; i++){
     })
     .then((willDelete) => {
       if (willDelete) {
-        parent.remove(); //REMOVE DATA FROM PAGE BUT NOT LOCALSTORAGE
-        updateSubject(); //UPDATE LOCAL STORAGE DATA
+        parent.remove(); //Remove data from page but not local storage
+        updateSubject(); //Update local storage data
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
         });
@@ -92,7 +93,30 @@ for (i=0 ; i<delAllBtn.length ; i++){
     //sweet alert code end
   }
 }
-//SUBJECT DELETE CODE END
+//SUBJECT "DELETE" CODE END
+
+//SUBJECT "EDIT" BUTTON CODE START
+let editAllBtn = visibleSubject.querySelectorAll(".edit-btn");
+for(i=0; i<editAllBtn.length; i++){
+  editAllBtn[i].onclick = function() {
+    let parent = this.parentElement.parentElement;
+    let saveBtn = parent.querySelector(".save-btn");
+    let h3 = parent.getElementsByTagName("H3");
+    h3[0].contentEditable = true;
+    h3[0].focus();
+    this.classList.add("d-none");
+    saveBtn.classList.remove("d-none");
+    saveBtn.onclick = function(){
+      let editedSub= h3[0].innerHTML;
+      let id = h3[0].getAttribute("index");
+      updateSubject(editedSub,id);
+      this.classList.add("d-none");
+      editAllBtn[id].classList.remove("d-none");
+      h3[0].contentEditable = false;
+    }
+  }
+}
+//SUBJECT "EDIT" BUTTON CODE END
 };
 
 //SUBJECT NAME GET FROM LOCAL STORAGE START
@@ -105,8 +129,13 @@ if(localStorage.getItem(brandcode+"_allSubject") != null){
 //SUBJECT NAME GET FROM LOCAL STORAGE END
 
 //UPDATE SUBJECT NAME IN LOCAL STORAGE START
-function updateSubject(){
-  let subjectBox = visibleSubject.querySelectorAll(".subject-box");
+function updateSubject(subject,id){
+  if(subject != undefined && id != undefined){
+    allSubject[id] = {
+      subjectName : subject
+    }
+  }else{
+    let subjectBox = visibleSubject.querySelectorAll(".subject-box");
   let i;
   allSubject = [];
   for(i=0; i<subjectBox.length; i++){
@@ -115,9 +144,13 @@ function updateSubject(){
       subjectName : h3[0].innerHTML
     });
   }
+  }
   //SET SUBJECT IN LOCAL STORAGE
   localStorage.setItem(brandcode+"_allSubject" , JSON.stringify(allSubject));
 }
 //UPDATE SUBJECT NAME IN LOCAL STORAGE END
 
+
 //SUBJECT CODING END
+
+
