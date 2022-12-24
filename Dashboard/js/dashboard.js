@@ -5,6 +5,9 @@ if (brandcode == null) {
   document.body.innerHTML = "";
   document.body.style.background = "black";
   swal("Unauthorised User!", "Please Login Again to Enter!", "warning");
+  setTimeout(function () {
+    window.location = "../company/company.html";
+  }, 4000);
 }
 let allUserData = JSON.parse(localStorage.getItem(brandcode + "_brand"));
 let brand_name = document.getElementById("brand-name");
