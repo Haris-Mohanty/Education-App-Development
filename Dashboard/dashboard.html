@@ -115,11 +115,7 @@
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button
-                      class="accordion-button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#create-subject"
-                    >
+                    <button class="accordion-button"  data-bs-toggle="collapse" data-bs-target="#create-subject">
                       Create Subject
                     </button>
                   </h2>
@@ -149,53 +145,45 @@
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button
-                      class="accordion-button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#create-question"
-                    >
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#create-question">
                       Create Subject
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse" id="create-question">
+                  <div class="accordion-collapse collapse show" id="create-question">
                     <div class="accordion-body">
-                      <form>
-                        <select name="" id="" class="form-select mb-3">
+                      <form class="question-form">
+                        <select name="" id="choose-subject" class="form-select mb-3">
                           <option value="choose subject">Choose Subject</option>
                         </select>
                         <label for="question">Enter your Question here !</label>
-                        <input
-                          type="text"
-                          class="form-control subject mb-3"
-                          id="question"
-                        />
+                        <input type="text" required class="form-control subject mb-3" id="question"/>
                         <label for="option-one">Option-1</label>
                         <input
-                          type="text"
+                          type="text" required
                           class="form-control subject mb-3"
                           id="option-one"
                         />
                         <label for="option-two">Option-2</label>
                         <input
-                          type="text"
+                          type="text" required
                           class="form-control subject mb-3"
                           id="option-two"
                         />
                         <label for="option-three">Option-3</label>
                         <input
-                          type="text"
+                          type="text" required
                           class="form-control subject mb-3"
                           id="option-three"
                         />
                         <label for="option-four">Option-4</label>
                         <input
-                          type="text"
+                          type="text" required
                           class="form-control subject mb-3"
                           id="option-four"
                         />
                         <label for="correct-answer">Correct Answer</label>
                         <input
-                          type="text"
+                          type="text" required
                           class="form-control subject mb-3"
                           id="correct-answer"
                         />
@@ -219,18 +207,11 @@
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button
-                      class="accordion-button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#show-subject"
-                    >
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#show-subject">
                       Update and Delete Subject!
                     </button>
                   </h2>
-                  <div
-                    class="accordion-collapse collapse show"
-                    id="show-subject"
-                  >
+                  <div class="accordion-collapse collapse show" id="show-subject">
                     <div class="accordion-body">
                       <div class="visible-subject">
                         <!-- <div  class="d-flex justify-content-between align-items-center">
