@@ -157,6 +157,7 @@ let choose_subject = document.getElementById("choose-subject");
 let question_form = document.querySelector(".question-form");
 let allQuestionInput = question_form.querySelectorAll("INPUT");
 let allQuestion = [];
+let subject;
 question_form.addEventListener("submit", (e) => {
   e.preventDefault();
   insertQuestionFunc();
@@ -168,7 +169,32 @@ const chooseSubjectFunction = () => {
     `;
   });
 };
-chooseSubjectFunction();
+chooseSubjectFunction();//Page reload call
+
+//First option select start
+let first_option = choose_subject.querySelectorAll("OPTION")[1];
+
+choose_subject.addEventListener("change", () => {
+checkSubject();
+checkSubjectKey();
+});
+function checkSubject() {
+  if (choose_subject.value == "choose subject") {   //"choose subject" is <option> value in form
+    subject = first_option.value;
+  } else {
+    subject = choose_subject.value;
+  }
+}
+checkSubject();//Page reload call
+
+function checkSubjectKey(){
+  if(localStorage.getItem(brandcode+"_"+subject+"_question") != null){
+    allQuestion = JSON.parse(localStorage.getItem(brandcode+"_"+subject+"_question"));
+  }else{
+    allQuestion = [];
+  }
+}
+checkSubjectKey(); //Page reload call
 
 function insertQuestionFunc() {
   if (choose_subject.value != "choose subject") {
@@ -181,7 +207,10 @@ function insertQuestionFunc() {
       optionFour: allQuestionInput[4].value,
       optionAns: allQuestionInput[5].value,
     });
-    localStorage.setItem(brandcode + "_" + choose_subject.value + "_question", JSON.stringify(allQuestion));
+    localStorage.setItem(
+      brandcode + "_" + choose_subject.value + "_question",
+      JSON.stringify(allQuestion)
+    );
     swal("Congratulations!", "Your Question Stored Successfully !", "success");
     question_form.reset();
   } else {
