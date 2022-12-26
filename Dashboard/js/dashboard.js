@@ -156,6 +156,7 @@ function updateSubject(subject, id) {
 let choose_subject = document.getElementById("choose-subject");
 let question_form = document.querySelector(".question-form");
 let allQuestionInput = question_form.querySelectorAll("INPUT");
+let select_subject = document.querySelector("#select-subject");
 let allQuestion = [];
 let subject;
 question_form.addEventListener("submit", (e) => {
@@ -167,10 +168,14 @@ const chooseSubjectFunction = () => {
     choose_subject.innerHTML += `
     <Option>${subject.subjectName}</Option>
     `;
+    select_subject.innerHTML += `
+    <Option>${subject.subjectName}</Option>
+    `;
   });
 };
 chooseSubjectFunction();//Page reload call
 
+//SH
 //First option select start
 let first_option = choose_subject.querySelectorAll("OPTION")[1];
 
@@ -186,7 +191,7 @@ function checkSubject() {
   }
 }
 checkSubject();//Page reload call
-
+//Question update in localstorage successfully code start
 function checkSubjectKey(){
   if(localStorage.getItem(brandcode+"_"+subject+"_question") != null){
     allQuestion = JSON.parse(localStorage.getItem(brandcode+"_"+subject+"_question"));
@@ -195,6 +200,7 @@ function checkSubjectKey(){
   }
 }
 checkSubjectKey(); //Page reload call
+//Question update in localstorage successfully code end
 
 function insertQuestionFunc() {
   if (choose_subject.value != "choose subject") {
