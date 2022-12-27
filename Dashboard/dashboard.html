@@ -108,14 +108,20 @@
                   style="
                     background-color: rgb(179, 22, 240);
                     color: rgb(203, 203, 253);
-                    font-weight: bold;">
+                    font-weight: bold;
+                  "
+                >
                   <h3>Create Subject</h3>
                 </li>
               </ul>
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button"  data-bs-toggle="collapse" data-bs-target="#create-subject">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#create-subject"
+                    >
                       Create Subject
                     </button>
                   </h2>
@@ -138,52 +144,77 @@
             </div>
             <div class="col-md-8">
               <ul class="list-group">
-                <li class="list-group-item text-center" style="background-color: rgb(179, 22, 240); color: rgb(203, 203, 253); font-weight: bold;">
+                <li
+                  class="list-group-item text-center"
+                  style="
+                    background-color: rgb(179, 22, 240);
+                    color: rgb(203, 203, 253);
+                    font-weight: bold;
+                  "
+                >
                   <h3>Create Subject Related Questions</h3>
                 </li>
               </ul>
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#create-question">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#create-question"
+                    >
                       Create Question
                     </button>
                   </h2>
                   <div class="accordion-collapse collapse" id="create-question">
                     <div class="accordion-body">
                       <form class="question-form">
-                        <select name="" id="choose-subject" class="form-select mb-3">
+                        <select
+                          name=""
+                          id="choose-subject"
+                          class="form-select mb-3"
+                        >
                           <option value="choose subject">Choose Subject</option>
                         </select>
                         <label for="question">Enter your Question here !</label>
-                        <input type="text" required class="form-control subject mb-3" id="question"/>
+                        <input
+                          type="text"
+                          required
+                          class="form-control subject mb-3"
+                          id="question"
+                        />
                         <label for="option-one">Option-1</label>
                         <input
-                          type="text" required
+                          type="text"
+                          required
                           class="form-control subject mb-3"
                           id="option-one"
                         />
                         <label for="option-two">Option-2</label>
                         <input
-                          type="text" required
+                          type="text"
+                          required
                           class="form-control subject mb-3"
                           id="option-two"
                         />
                         <label for="option-three">Option-3</label>
                         <input
-                          type="text" required
+                          type="text"
+                          required
                           class="form-control subject mb-3"
                           id="option-three"
                         />
                         <label for="option-four">Option-4</label>
                         <input
-                          type="text" required
+                          type="text"
+                          required
                           class="form-control subject mb-3"
                           id="option-four"
                         />
                         <label for="correct-answer">Correct Answer</label>
                         <input
-                          type="text" required
+                          type="text"
+                          required
                           class="form-control subject mb-3"
                           id="correct-answer"
                         />
@@ -200,18 +231,32 @@
           <div class="row mt-2">
             <div class="col-md-4">
               <ul class="list-group">
-                <li class="list-group-item text-center" style="background-color: rgb(179, 22, 240); color: rgb(203, 203, 253); font-weight: bold;">
+                <li
+                  class="list-group-item text-center"
+                  style="
+                    background-color: rgb(179, 22, 240);
+                    color: rgb(203, 203, 253);
+                    font-weight: bold;
+                  "
+                >
                   <h3>Show Subject</h3>
                 </li>
               </ul>
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#show-subject">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#show-subject"
+                    >
                       Update and Delete Subject!
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse show" id="show-subject">
+                  <div
+                    class="accordion-collapse collapse show"
+                    id="show-subject"
+                  >
                     <div class="accordion-body">
                       <div class="visible-subject">
                         <!-- <div  class="d-flex justify-content-between align-items-center">
@@ -230,22 +275,114 @@
             </div>
             <div class="col-md-8">
               <ul class="list-group">
-                <li class="list-group-item text-center" style="background-color: rgb(179, 22, 240); color: rgb(203, 203, 253); font-weight: bold;">
+                <li
+                  class="list-group-item text-center"
+                  style="
+                    background-color: rgb(179, 22, 240);
+                    color: rgb(203, 203, 253);
+                    font-weight: bold;
+                  "
+                >
                   <h3>Show Subject Related Questions</h3>
                 </li>
               </ul>
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#show-question">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#show-question"
+                    >
                       Update and Delete Questions
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse" id="show-question">
+                  <div
+                    class="accordion-collapse collapse show"
+                    id="show-question"
+                  >
                     <div class="accordion-body">
                       <select id="select-subject" class="form-select mb-3">
                         <option value="choose subject">Choose Subject</option>
                       </select>
+                      <div class="visible-question">
+                        <div class="mb-5">
+                          <br>
+                          <div class="d-flex justify-content-between">
+                            <h3>1. Whats your name?</h3>
+                            <div>
+                              <i class="fa fa-edit mx-2"></i>
+                              <i class="fa fa-save mx-2"></i>
+                              <i class="fa fa-trash mx-2"></i>
+                            </div>
+                          </div>
+                          <br>
+                          <div>
+                            <span>A.option-1</span><br><br>
+                            <span>B.option-2</span><br><br>
+                            <span>C.option-3</span><br><br>
+                            <span>D.option-4</span><br><br>
+                            <span class="bg-info p-3">Correct Answer</span>
+                          </div>
+                        </div>
+                        <div class="mb-5">
+                          <br>
+                          <div class="d-flex justify-content-between">
+                            <h3>1. Whats your name?</h3>
+                            <div>
+                              <i class="fa fa-edit mx-2"></i>
+                              <i class="fa fa-save mx-2"></i>
+                              <i class="fa fa-trash mx-2"></i>
+                            </div>
+                          </div>
+                          <br>
+                          <div>
+                            <span>A.option-1</span><br><br>
+                            <span>B.option-2</span><br><br>
+                            <span>C.option-3</span><br><br>
+                            <span>D.option-4</span><br><br>
+                            <span class="bg-info p-3">Correct Answer</span>
+                          </div>
+                        </div>
+                        <div class="mb-5">
+                          <br>
+                          <div class="d-flex justify-content-between">
+                            <h3>1. Whats your name?</h3>
+                            <div>
+                              <i class="fa fa-edit mx-2"></i>
+                              <i class="fa fa-save mx-2"></i>
+                              <i class="fa fa-trash mx-2"></i>
+                            </div>
+                          </div>
+                          <br>
+                          <div>
+                            <span>A.option-1</span><br><br>
+                            <span>B.option-2</span><br><br>
+                            <span>C.option-3</span><br><br>
+                            <span>D.option-4</span><br><br>
+                            <span class="bg-info p-3">Correct Answer</span>
+                          </div>
+                        </div>
+                        <div class="mb-5">
+                          <br>
+                          <div class="d-flex justify-content-between">
+                            <h3>1. Whats your name?</h3>
+                            <div>
+                              <i class="fa fa-edit mx-2"></i>
+                              <i class="fa fa-save mx-2"></i>
+                              <i class="fa fa-trash mx-2"></i>
+                            </div>
+                          </div>
+                          <br>
+                          <div>
+                            <span>A.option-1</span><br><br>
+                            <span>B.option-2</span><br><br>
+                            <span>C.option-3</span><br><br>
+                            <span>D.option-4</span><br><br>
+                            <span class="bg-info p-3">Correct Answer</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

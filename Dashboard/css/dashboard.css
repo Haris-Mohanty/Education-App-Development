@@ -94,3 +94,13 @@
 .accordion-body .btn{
     background-color: rgb(31, 196, 238);
 }
+/* Show Subject Related Questions */
+.visible-question i{
+    font-size: 23px;
+}
+.visible-question span{
+    font-size: 20px;
+}
+.visible-question .bg-info{
+    color: aliceblue;
+}
