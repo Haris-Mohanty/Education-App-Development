@@ -302,5 +302,21 @@ const new_question_fun = () => {
     };
   }
   //SHOW QUESTION "DELETE" END
+
+  //SHOW QUESTION "EDIT" START
+  let allEditBtnQues = document.querySelectorAll(".edit-btn-ques");
+  for(i=0; i<allEditBtnQues.length; i++){
+    allEditBtnQues[i].onclick = function(){
+      let parent = this.parentElement.parentElement.parentElement;
+      let saveBtn = parent.querySelector(".save-btn-ques");
+      this.classList.add("d-none");
+      saveBtn.classList.remove("d-none");
+      saveBtn.onclick = function(){
+        alert();
+      }
+    }
+  }
+  //SHOW QUESTION "EDit" END
+
 };
 //SHOW SUBJECT RELATED QUESTION : Showing question from local storage End
