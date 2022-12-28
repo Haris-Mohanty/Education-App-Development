@@ -12,7 +12,7 @@
     left: 0;
     width: 250px;
     height: 100vh;
-    background-color: black;
+    background-color: rgb(235, 25, 196);
     display: flex;
     justify-content: start;
     align-items: center;
@@ -44,9 +44,10 @@
     margin: 8px;
 }
 .side-nav ul li:hover{
-    background-color: azure;
-    color: darkviolet;
+    background-color: rgb(21, 251, 251);
+    color: rgb(42, 38, 244);
     cursor: pointer;
+    font-weight: bold;
 }
 .side-nav button{
     position: absolute;
