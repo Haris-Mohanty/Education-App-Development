@@ -230,27 +230,33 @@ function insertQuestionFunc() {
 
 //SHOW SUBJECT RELATED QUESTION : Showing question from local storage start
 let new_question = [];
-let visibleQuestion = document.querySelector(".visible-question")
+let visibleQuestion = document.querySelector(".visible-question");
 select_subject.addEventListener("change", () => {
-  if(localStorage.getItem(brandcode + "_" + select_subject.value +"_question") != null){
-    new_question = JSON.parse(localStorage.getItem(brandcode + "_" + select_subject.value+"_question"));
+  if (
+    localStorage.getItem(
+      brandcode + "_" + select_subject.value + "_question"
+    ) != null
+  ) {
+    new_question = JSON.parse(
+      localStorage.getItem(brandcode + "_" + select_subject.value + "_question")
+    );
     visibleQuestion.innerHTML = "";
     new_question_fun();
-  }else{
-    visibleQuestion.innerHTML = "<b style='color:red'>No Data Available!</b>"
+  } else {
+    visibleQuestion.innerHTML = "<b style='color:red'>No Data Available!</b>";
   }
 });
-const new_question_fun = () =>{
-  new_question.forEach((question,index)=>{
+const new_question_fun = () => {
+  new_question.forEach((question, index) => {
     visibleQuestion.innerHTML += `
-    <div class="mb-5">
+    <div class="mb-5" index=${index}>
       <br>
       <div class="d-flex justify-content-between">
-        <h3>${index+1}. ${question.question}</h3>
+        <h3>${index + 1}. ${question.question}</h3>
         <div>
-          <i class="fa fa-edit mx-2"></i>
-          <i class="fa fa-save mx-2"></i>
-          <i class="fa fa-trash mx-2"></i>
+          <i class="fa fa-edit edit-btn-ques mx-2"></i>
+          <i class="fa fa-save save-btn-ques d-none mx-2"></i>
+          <i class="fa fa-trash del-btn-ques mx-2"></i>
         </div>
       </div>
       <br>
@@ -263,6 +269,38 @@ const new_question_fun = () =>{
       </div>
     </div>
     `;
-  })
-}
+  });
+  //SHOW QUESTION "DELETE" START
+  let allDelBtnQues = document.querySelectorAll(".del-btn-ques");
+  let i;
+  for (i = 0; i < allDelBtnQues.length; i++) {
+    allDelBtnQues[i].onclick = function () {
+      let parent = this.parentElement.parentElement.parentElement;
+      let index = parent.getAttribute("index");
+
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          new_question.splice(index, 1); //Delete data from page localstorage
+          localStorage.setItem(
+            brandcode + "_" + select_subject.value + "_question",
+            JSON.stringify(new_question)
+          ); //Update local storage data
+          parent.remove(); //Live Delete
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
+    };
+  }
+  //SHOW QUESTION "DELETE" END
+};
 //SHOW SUBJECT RELATED QUESTION : Showing question from local storage End
