@@ -173,29 +173,32 @@ const chooseSubjectFunction = () => {
     `;
   });
 };
-chooseSubjectFunction();//Page reload call
+chooseSubjectFunction(); //Page reload call
 
-//SH
+//SHOW SUBJECT RELATED QUESTION (Choose value)
 //First option select start
 let first_option = choose_subject.querySelectorAll("OPTION")[1];
 
 choose_subject.addEventListener("change", () => {
-checkSubject();
-checkSubjectKey();
+  checkSubject();
+  checkSubjectKey();
 });
 function checkSubject() {
-  if (choose_subject.value == "choose subject") {   //"choose subject" is <option> value in form
+  if (choose_subject.value == "choose subject") {
+    //"choose subject" is <option> value in form
     subject = first_option.value;
   } else {
     subject = choose_subject.value;
   }
 }
-checkSubject();//Page reload call
+checkSubject(); //Page reload call
 //Question update in localstorage successfully code start
-function checkSubjectKey(){
-  if(localStorage.getItem(brandcode+"_"+subject+"_question") != null){
-    allQuestion = JSON.parse(localStorage.getItem(brandcode+"_"+subject+"_question"));
-  }else{
+function checkSubjectKey() {
+  if (localStorage.getItem(brandcode + "_" + subject + "_question") != null) {
+    allQuestion = JSON.parse(
+      localStorage.getItem(brandcode + "_" + subject + "_question")
+    );
+  } else {
     allQuestion = [];
   }
 }
@@ -224,3 +227,42 @@ function insertQuestionFunc() {
   }
 }
 //CREATE QUESTIONS (CHOOSE SUBJECT VALUE SHOW) CODE END
+
+//SHOW SUBJECT RELATED QUESTION : Showing question from local storage start
+let new_question = [];
+let visibleQuestion = document.querySelector(".visible-question")
+select_subject.addEventListener("change", () => {
+  if(localStorage.getItem(brandcode + "_" + select_subject.value +"_question") != null){
+    new_question = JSON.parse(localStorage.getItem(brandcode + "_" + select_subject.value+"_question"));
+    visibleQuestion.innerHTML = "";
+    new_question_fun();
+  }else{
+    visibleQuestion.innerHTML = "<b style='color:red'>No Data Available!</b>"
+  }
+});
+const new_question_fun = () =>{
+  new_question.forEach((question,index)=>{
+    visibleQuestion.innerHTML += `
+    <div class="mb-5">
+      <br>
+      <div class="d-flex justify-content-between">
+        <h3>${index+1}. ${question.question}</h3>
+        <div>
+          <i class="fa fa-edit mx-2"></i>
+          <i class="fa fa-save mx-2"></i>
+          <i class="fa fa-trash mx-2"></i>
+        </div>
+      </div>
+      <br>
+      <div>
+        <span>A. ${question.optionOne}</span><br><br>
+        <span>B. ${question.optionTwo}</span><br><br>
+        <span>C. ${question.optionThree}</span><br><br>
+        <span>D. ${question.optionFour}</span><br><br><br>
+        <span class="bg-info p-3">${question.optionAns}</span>
+      </div>
+    </div>
+    `;
+  })
+}
+//SHOW SUBJECT RELATED QUESTION : Showing question from local storage End
