@@ -305,18 +305,47 @@ const new_question_fun = () => {
 
   //SHOW QUESTION "EDIT" START
   let allEditBtnQues = document.querySelectorAll(".edit-btn-ques");
-  for(i=0; i<allEditBtnQues.length; i++){
-    allEditBtnQues[i].onclick = function(){
+  for (i = 0; i < allEditBtnQues.length; i++) {
+    allEditBtnQues[i].onclick = function () {
       let parent = this.parentElement.parentElement.parentElement;
+      let index = +parent.getAttribute("INDEX"); //"+" it is used to add.
       let saveBtn = parent.querySelector(".save-btn-ques");
       this.classList.add("d-none");
       saveBtn.classList.remove("d-none");
-      saveBtn.onclick = function(){
-        alert();
+      let h3 = parent.querySelector("H3");
+      let span = parent.querySelectorAll("SPAN");
+      // h3.style.border = "2px solid aqua";
+      h3.contentEditable = true;
+      h3.focus();
+      let j;
+      for (j = 0; j < span.length; j++) {
+        span[j].contentEditable = true;
+        span[j].style.border = "2px solid aqua";
       }
-    }
+      saveBtn.onclick = function () {
+        let subject = select_subject.value;
+        let question = h3.innerHTML.replace(`${index + 1}. `, ""); //Remove question number("use replace()")
+        let op1 = span[0].innerHTML.replace("A.", "");
+        let op2 = span[1].innerHTML.replace("B.", "");
+        let op3 = span[2].innerHTML.replace("C.", "");
+        let op4 = span[3].innerHTML.replace("D.", "");
+        let correctAns = span[4].innerHTML;
+        swal({
+          title: "Are you sure?",
+          text: "Once up, you will not be able to recover this imaginary file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then((willUpdated) => {
+          if (willUpdated) {
+            insertQuestionFunc(subject,index,op1,op2,op3,op4,correctAns);
+          } else {
+            swal("Your imaginary file is safe!");
+          }
+        });
+      };
+    };
   }
   //SHOW QUESTION "EDit" END
-
 };
 //SHOW SUBJECT RELATED QUESTION : Showing question from local storage End
