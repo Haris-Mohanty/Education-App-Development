@@ -205,25 +205,38 @@ function checkSubjectKey() {
 checkSubjectKey(); //Page reload call
 //Question update in localstorage successfully code end
 
-function insertQuestionFunc() {
-  if (choose_subject.value != "choose subject") {
-    //"choose subject" is <option> value in form
-    allQuestion.push({
-      question: allQuestionInput[0].value,
-      optionOne: allQuestionInput[1].value,
-      optionTwo: allQuestionInput[2].value,
-      optionThree: allQuestionInput[3].value,
-      optionFour: allQuestionInput[4].value,
-      optionAns: allQuestionInput[5].value,
-    });
-    localStorage.setItem(
-      brandcode + "_" + choose_subject.value + "_question",
-      JSON.stringify(allQuestion)
-    );
-    swal("Congratulations!", "Your Question Stored Successfully !", "success");
-    question_form.reset();
-  } else {
-    swal("Invalid Choise!", "Please select a Subject !", "warning");
+function insertQuestionFunc(sub,id,ques,op1,op2,op3,op4,correctAns) {
+  if(sub != undefined && id != undefined){
+    allQuestion[id]={
+      question: ques,
+      optionOne: op1,
+      optionTwo: op2,
+      optionThree: op3,
+      optionFour: op4,
+      optionAns: correctAns
+    }
+    localStorage.setItem(brandcode + "_"+sub+"_question",JSON.stringify(allQuestion));
+    swal("Updated!", "Question has been Updated successfully !", "success");
+  }else{
+    if (choose_subject.value != "choose subject") {
+      //"choose subject" is <option> value in form
+      allQuestion.push({
+        question: allQuestionInput[0].value,
+        optionOne: allQuestionInput[1].value,
+        optionTwo: allQuestionInput[2].value,
+        optionThree: allQuestionInput[3].value,
+        optionFour: allQuestionInput[4].value,
+        optionAns: allQuestionInput[5].value,
+      });
+      localStorage.setItem(
+        brandcode + "_" + choose_subject.value + "_question",
+        JSON.stringify(allQuestion)
+      );
+      swal("Congratulations!", "Your Question Stored Successfully !", "success");
+      question_form.reset();
+    } else {
+      swal("Invalid Choise!", "Please select a Subject !", "warning");
+    }
   }
 }
 //CREATE QUESTIONS (CHOOSE SUBJECT VALUE SHOW) CODE END
@@ -232,14 +245,8 @@ function insertQuestionFunc() {
 let new_question = [];
 let visibleQuestion = document.querySelector(".visible-question");
 select_subject.addEventListener("change", () => {
-  if (
-    localStorage.getItem(
-      brandcode + "_" + select_subject.value + "_question"
-    ) != null
-  ) {
-    new_question = JSON.parse(
-      localStorage.getItem(brandcode + "_" + select_subject.value + "_question")
-    );
+  if (localStorage.getItem(brandcode + "_" + select_subject.value + "_question") != null) {
+    new_question = JSON.parse(localStorage.getItem(brandcode + "_" + select_subject.value + "_question"));
     visibleQuestion.innerHTML = "";
     new_question_fun();
   } else {
@@ -323,8 +330,8 @@ const new_question_fun = () => {
         span[j].style.border = "2px solid aqua";
       }
       saveBtn.onclick = function () {
-        let subject = select_subject.value;
-        let question = h3.innerHTML.replace(`${index + 1}. `, ""); //Remove question number("use replace()")
+        let sub = select_subject.value;
+        let ques = h3.innerHTML.replace(`${index + 1}. `, ""); //Remove question number("use replace()")
         let op1 = span[0].innerHTML.replace("A.", "");
         let op2 = span[1].innerHTML.replace("B.", "");
         let op3 = span[2].innerHTML.replace("C.", "");
@@ -332,13 +339,20 @@ const new_question_fun = () => {
         let correctAns = span[4].innerHTML;
         swal({
           title: "Are you sure?",
-          text: "Once up, you will not be able to recover this imaginary file!",
+          text: "Click OK to Update Question !",
           icon: "warning",
           buttons: true,
           dangerMode: true,
         }).then((willUpdated) => {
           if (willUpdated) {
-            insertQuestionFunc(subject,index,op1,op2,op3,op4,correctAns);
+            insertQuestionFunc(sub,index,ques,op1,op2,op3,op4,correctAns);
+            allEditBtnQues[index].classList.remove("d-none");
+            saveBtn.classList.add("d-none");
+            h3.contentEditable = false;
+            for (j = 0; j < span.length; j++) {
+              span[j].contentEditable = false;
+              span[j].style.border = "none";
+            }
           } else {
             swal("Your imaginary file is safe!");
           }
