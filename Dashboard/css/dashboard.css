@@ -18,6 +18,8 @@
     align-items: center;
     padding: 20px 0px;
     flex-direction: column;
+    transition: 0.5s ease-in-out;
+    z-index: 1000;
 }
 .side-nav .profile-pic{
     width: 150px;
@@ -107,4 +109,29 @@
 }
 .visible-question .bg-info{
     color: aliceblue;
+}
+/* Toggler coding */
+.toggler-box{
+    opacity: 0;
+}
+.toggler-box .toggler-icon{
+    position: fixed;
+    padding: 15px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 10px;
+}
+@media(max-width : 991px){
+    .side-nav{
+        transform: translateX(-255px)
+    }
+    .side-nav.active{
+        transform: translateX(0px)
+    }
+    .toggler-box{
+        opacity: 1;
+    }
 }

@@ -363,3 +363,18 @@ const new_question_fun = () => {
   //SHOW QUESTION "EDit" END
 };
 //SHOW SUBJECT RELATED QUESTION : Showing question from local storage End
+
+//TOGGLER CODE / RESPONSIVE CODE START
+let togglersBtn = document.querySelectorAll(".toggler-icon");
+let sideNav = document.querySelector(".side-nav");
+togglersBtn[0].onclick= function(){
+  sideNav.classList.add("active");
+  this.classList.add("d-none");
+  togglersBtn[1].classList.remove("d-none");
+}
+togglersBtn[1].onclick= function(){
+  sideNav.classList.remove("active");
+  this.classList.add("d-none");
+  togglersBtn[0].classList.remove("d-none");
+}
+//TOGGLER CODE / RESPONSIVE CODE END

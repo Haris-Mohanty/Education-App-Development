@@ -37,6 +37,10 @@
     <title>Dashboard</title>
   </head>
   <body>
+    <div class="toggler-box">
+      <i class="fa-solid fa-bars toggler-icon"></i>
+      <i class="fa-solid fa-xmark d-none toggler-icon"></i>
+    </div>
     <div class="side-nav">
       <div class="profile-pic"></div>
       <ul class="list-group">
@@ -65,10 +69,10 @@
       </ul>
       <button id="log-out-btn">Log Out</button>
     </div>
-    <div class="container-fluid main-box">
+    <div class="container-fluid overflow-hidden p-3 main-box">
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-10 mt-1 p-0">
+        <div class="col-md-0 col-lg-2"></div>
+        <div class="col-md-12 col-lg-10 mt-1 p-0">
           <ul class="list-group brand-box">
             <li class="list-group-item">
               <h1 id="brand-name"></h1>
