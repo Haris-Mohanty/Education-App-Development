@@ -331,15 +331,15 @@
                   </h2>
                   <div class="accordion-collapse collapse" id="registration-form">
                     <div class="accordion-body">
-                      <form>
+                      <form class="registration-form">
                         <div class="row">
                           <div class="col-md-6">
                             <label for="registration-name">Name</label>
-                            <input type="text" id="registration-name" class="form-control mb-3">
+                            <input type="text" required id="registration-name" class="form-control mb-3">
                             <label for="father">Father's Name</label>
-                            <input type="text" id="father" class="form-control mb-3">
+                            <input type="text" required id="father" class="form-control mb-3">
                             <label for="dob">Date Of Birth</label>
-                            <input type="date" id="dob" class="form-control mb-3">
+                            <input type="date" required id="dob" class="form-control mb-3">
                             <select name="" id="choose-type" class="form-select mb-3">
                               <option value="choose type">Choose Type</option>
                               <option value="teacher">Teacher</option>
@@ -351,13 +351,13 @@
                           </div>
                           <div class="col-md-6">
                             <label for="mobile">Mobile</label>
-                            <input type="text" id="mobile" class="form-control mb-3">
+                            <input type="text" required id="mobile" class="form-control mb-3">
                             <label for="enrollment">Enrollment</label>
-                            <input type="text" id="enrollment" class="form-control mb-3">
+                            <input type="text required" id="enrollment" class="form-control mb-3">
                             <label for="passsword">Passsword</label>
-                            <input type="passsword" id="passsword" class="form-control mb-3">
+                            <input type="passsword" required id="passsword" class="form-control mb-3">
                             <label for="address">Address</label>
-                            <textarea id="address" class="form-control"></textarea>
+                            <textarea id="address" required class="form-control"></textarea>
                           </div>
                         </div>
                       </form>

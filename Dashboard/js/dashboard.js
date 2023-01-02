@@ -205,19 +205,22 @@ function checkSubjectKey() {
 checkSubjectKey(); //Page reload call
 //Question update in localstorage successfully code end
 
-function insertQuestionFunc(sub,id,ques,op1,op2,op3,op4,correctAns) {
-  if(sub != undefined && id != undefined){
-    allQuestion[id]={
+function insertQuestionFunc(sub, id, ques, op1, op2, op3, op4, correctAns) {
+  if (sub != undefined && id != undefined) {
+    allQuestion[id] = {
       question: ques,
       optionOne: op1,
       optionTwo: op2,
       optionThree: op3,
       optionFour: op4,
-      optionAns: correctAns
-    }
-    localStorage.setItem(brandcode + "_"+sub+"_question",JSON.stringify(allQuestion));
+      optionAns: correctAns,
+    };
+    localStorage.setItem(
+      brandcode + "_" + sub + "_question",
+      JSON.stringify(allQuestion)
+    );
     swal("Updated!", "Question has been Updated successfully !", "success");
-  }else{
+  } else {
     if (choose_subject.value != "choose subject") {
       //"choose subject" is <option> value in form
       allQuestion.push({
@@ -232,10 +235,14 @@ function insertQuestionFunc(sub,id,ques,op1,op2,op3,op4,correctAns) {
         brandcode + "_" + choose_subject.value + "_question",
         JSON.stringify(allQuestion)
       );
-      swal("Congratulations!", "Your Question Stored Successfully !", "success");
+      swal(
+        "Congratulations!",
+        "Your Question Stored Successfully !",
+        "success"
+      );
       question_form.reset();
     } else {
-      swal("Invalid Choise!", "Please select a Subject !", "warning");
+      swal("Invalid Choice!", "Please select a Subject !", "warning");
     }
   }
 }
@@ -245,8 +252,14 @@ function insertQuestionFunc(sub,id,ques,op1,op2,op3,op4,correctAns) {
 let new_question = [];
 let visibleQuestion = document.querySelector(".visible-question");
 select_subject.addEventListener("change", () => {
-  if (localStorage.getItem(brandcode + "_" + select_subject.value + "_question") != null) {
-    new_question = JSON.parse(localStorage.getItem(brandcode + "_" + select_subject.value + "_question"));
+  if (
+    localStorage.getItem(
+      brandcode + "_" + select_subject.value + "_question"
+    ) != null
+  ) {
+    new_question = JSON.parse(
+      localStorage.getItem(brandcode + "_" + select_subject.value + "_question")
+    );
     visibleQuestion.innerHTML = "";
     new_question_fun();
   } else {
@@ -345,7 +358,16 @@ const new_question_fun = () => {
           dangerMode: true,
         }).then((willUpdated) => {
           if (willUpdated) {
-            insertQuestionFunc(sub,index,ques,op1,op2,op3,op4,correctAns);
+            insertQuestionFunc(
+              sub,
+              index,
+              ques,
+              op1,
+              op2,
+              op3,
+              op4,
+              correctAns
+            );
             allEditBtnQues[index].classList.remove("d-none");
             saveBtn.classList.add("d-none");
             h3.contentEditable = false;
@@ -364,17 +386,57 @@ const new_question_fun = () => {
 };
 //SHOW SUBJECT RELATED QUESTION : Showing question from local storage End
 
+//STUDENTS & TEACHERS REGISTRATION FORM CODE START
+let registrationForm = document.querySelector(".registration-form");
+let AllRegInput = registrationForm.querySelectorAll("INPUT");
+let userType = registrationForm.querySelector("SELECT");
+let address = registrationForm.querySelector("TEXTAREA");
+let registrationData = [];
+
+registrationForm.onsubmit = function (e) {
+  e.preventDefault();
+  registrationFunc();
+};
+
+// Get Data code start
+if(localStorage.getItem(brandcode+"_registrationData")!= null){
+  registrationData = JSON.parse(localStorage.getItem(brandcode+"_registrationData"));
+}
+// Get Data code end
+
+const registrationFunc = () => {
+  if (userType.value != "choose type") {
+    registrationData.push({
+      name : AllRegInput[0].value,
+      fatherName : AllRegInput[1].value,
+      dob : AllRegInput[2].value,
+      userType : userType.value,
+      mobile : AllRegInput[3].value,
+      enrollment : AllRegInput[4].value,
+      password : AllRegInput[5].value,
+      address : address.value
+    });
+    localStorage.setItem(brandcode+"_registrationData", JSON.stringify(registrationData));
+    swal("Registration Completed!", "Your Data has been Inserted Successfully !", "success");
+    registrationForm.reset();
+  } else {
+    swal("Invalid Choice!", "Please select a Usertype !", "warning");
+  }
+};
+
+//STUDENTS & TEACHERS REGISTRATION FORM CODE END
+
 //TOGGLER CODE / RESPONSIVE CODE START
 let togglersBtn = document.querySelectorAll(".toggler-icon");
 let sideNav = document.querySelector(".side-nav");
-togglersBtn[0].onclick= function(){
+togglersBtn[0].onclick = function () {
   sideNav.classList.add("active");
   this.classList.add("d-none");
   togglersBtn[1].classList.remove("d-none");
-}
-togglersBtn[1].onclick= function(){
+};
+togglersBtn[1].onclick = function () {
   sideNav.classList.remove("active");
   this.classList.add("d-none");
   togglersBtn[0].classList.remove("d-none");
-}
+};
 //TOGGLER CODE / RESPONSIVE CODE END
