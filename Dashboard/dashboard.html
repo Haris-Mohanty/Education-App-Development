@@ -202,26 +202,11 @@
                           id="option-two"
                         />
                         <label for="option-three">Option-3</label>
-                        <input
-                          type="text"
-                          required
-                          class="form-control subject mb-3"
-                          id="option-three"
-                        />
+                        <input type="text" required class="form-control subject mb-3" id="option-three"/>
                         <label for="option-four">Option-4</label>
-                        <input
-                          type="text"
-                          required
-                          class="form-control subject mb-3"
-                          id="option-four"
-                        />
+                        <input type="text" required class="form-control subject mb-3" id="option-four"/>
                         <label for="correct-answer">Correct Answer</label>
-                        <input
-                          type="text"
-                          required
-                          class="form-control subject mb-3"
-                          id="correct-answer"
-                        />
+                        <input type="text" required class="form-control subject mb-3" id="correct-answer"/>
                         <div align="end">
                           <button class="btn">Store Question</button>
                         </div>
@@ -237,12 +222,7 @@
               <ul class="list-group">
                 <li
                   class="list-group-item text-center"
-                  style="
-                    background-color: rgb(179, 22, 240);
-                    color: rgb(203, 203, 253);
-                    font-weight: bold;
-                  "
-                >
+                  style="background-color: rgb(179, 22, 240); color: rgb(203, 203, 253); font-weight: bold;">
                   <h3>Show Subject</h3>
                 </li>
               </ul>
@@ -257,10 +237,7 @@
                       Update and Delete Subject!
                     </button>
                   </h2>
-                  <div
-                    class="accordion-collapse collapse show"
-                    id="show-subject"
-                  >
+                  <div class="accordion-collapse collapse" id="show-subject">
                     <div class="accordion-body">
                       <div class="visible-subject">
                         <!-- <div  class="d-flex justify-content-between align-items-center">
@@ -281,12 +258,7 @@
               <ul class="list-group">
                 <li
                   class="list-group-item text-center"
-                  style="
-                    background-color: rgb(179, 22, 240);
-                    color: rgb(203, 203, 253);
-                    font-weight: bold;
-                  "
-                >
+                  style="background-color: rgb(179, 22, 240); color: rgb(203, 203, 253); font-weight: bold;">
                   <h3>Show Subject Related Questions</h3>
                 </li>
               </ul>
@@ -296,15 +268,11 @@
                     <button
                       class="accordion-button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#show-question"
-                    >
+                      data-bs-target="#show-question">
                       Update and Delete Questions
                     </button>
                   </h2>
-                  <div
-                    class="accordion-collapse collapse show"
-                    id="show-question"
-                  >
+                  <div class="accordion-collapse collapse" id="show-question">
                     <div class="accordion-body">
                       <select id="select-subject" class="form-select mb-3">
                         <option value="choose subject">Choose Subject</option>
@@ -330,6 +298,63 @@
                           </div>
                         </div> -->
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li
+                  class="list-group-item text-center"
+                  style="background-color: rgb(179, 22, 240); color: rgb(203, 203, 253); font-weight: bold;">
+                  <h3>Students & Teachers Registration Form</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#registration-form">
+                      Registration Form
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse collapse show" id="registration-form">
+                    <div class="accordion-body">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="registration-name">Name</label>
+                            <input type="text" id="registration-name" class="form-control mb-3">
+                            <label for="father">Father's Name</label>
+                            <input type="text" id="father" class="form-control mb-3">
+                            <label for="dob">Date Of Birth</label>
+                            <input type="date" id="dob" class="form-control mb-3">
+                            <select name="" id="choose-type" class="form-select mb-3">
+                              <option value="choose type">Choose Type</option>
+                              <option value="teacher">Teacher</option>
+                              <option value="Student">Student</option>
+                            </select>
+                            <div align="end">
+                              <button class="btn bg-info">Register</button>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" id="mobile" class="form-control mb-3">
+                            <label for="enrollment">Enrollment</label>
+                            <input type="text" id="enrollment" class="form-control mb-3">
+                            <label for="passsword">Passsword</label>
+                            <input type="passsword" id="passsword" class="form-control mb-3">
+                            <label for="address">Address</label>
+                            <textarea id="address" class="form-control"></textarea>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
