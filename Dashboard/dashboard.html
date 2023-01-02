@@ -218,6 +218,7 @@
             </div>
           </div>
           <div class="row mt-2">
+            <!-- Show Subject code Start -->
             <div class="col-md-4">
               <ul class="list-group">
                 <li
@@ -254,6 +255,9 @@
                 </div>
               </div>
             </div>
+            <!-- Show Subject code End -->
+
+            <!-- Show Subject Related Questions Start -->
             <div class="col-md-8">
               <ul class="list-group">
                 <li
@@ -303,7 +307,9 @@
                 </div>
               </div>
             </div>
+            <!-- Show Subject Related Questions End -->
           </div>
+          <!-- Students & Teachers Registration Form Start-->
           <div class="row mt-2">
             <div class="col-md-12">
               <ul class="list-group">
@@ -323,7 +329,7 @@
                       Registration Form
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse show" id="registration-form">
+                  <div class="accordion-collapse collapse" id="registration-form">
                     <div class="accordion-body">
                       <form>
                         <div class="row">
@@ -361,6 +367,136 @@
               </div>
             </div>
           </div>
+          <!-- Students & Teachers Registration Form End-->
+
+          <!-- Registered Students & Teachers Data Start -->
+          <div class="row mt-2">
+            <div class="col-md-12">
+              <ul class="list-group">
+                <li
+                  class="list-group-item text-center"
+                  style="background-color: rgb(179, 22, 240); color: rgb(203, 203, 253); font-weight: bold;">
+                  <h3>Registered Students & Teachers Data</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#registration-form">
+                      All Type Of User Data
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse collapse show" id="registration-form">
+                    <div class="accordion-body" style="overflow-x: scroll;">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>S/N</th>
+                            <th>Profile</th>
+                            <th>Name</th>
+                            <th>Father's Name</th>
+                            <th>Date Of Birth</th>
+                            <th>User Type</th>
+                            <th>Mobile</th>
+                            <th>Enrollment</th>
+                            <th>Passsword</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">${index+1}</th>
+                            <td>
+                              <div class="profile">
+                                <img src="" alt="" srcset="">
+                              </div>
+                            </td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.name}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.father}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.dob}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.choose-type}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.mobile}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.enrollment}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.passsword}</td>
+                            <td style="width: 8rem;">${allData.address}</td>
+                            <td class="text-nowrap" style="width: 8rem;">
+                              <i class="fa-solid fa-trash"></i>
+                              <i class="fa-regular fa-eye"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">${index+1}</th>
+                            <td>
+                              <div class="profile">
+                                <img src="" alt="" srcset="">
+                              </div>
+                            </td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.name}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.father}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.dob}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.choose-type}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.mobile}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.enrollment}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.passsword}</td>
+                            <td style="width: 8rem;">${allData.address}</td>
+                            <td class="text-nowrap" style="width: 8rem;">
+                              <i class="fa-solid fa-trash"></i>
+                              <i class="fa-regular fa-eye"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">${index+1}</th>
+                            <td>
+                              <div class="profile">
+                                <img src="" alt="" srcset="">
+                              </div>
+                            </td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.name}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.father}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.dob}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.choose-type}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.mobile}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.enrollment}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.passsword}</td>
+                            <td style="width: 8rem;">${allData.address}</td>
+                            <td class="text-nowrap" style="width: 8rem;">
+                              <i class="fa-solid fa-trash"></i>
+                              <i class="fa-regular fa-eye"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">${index+1}</th>
+                            <td>
+                              <div class="profile">
+                                <img src="" alt="" srcset="">
+                              </div>
+                            </td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.name}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.father}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.dob}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.choose-type}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.mobile}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.enrollment}</td>
+                            <td class="text-nowrap" style="width: 8rem;">${allData.passsword}</td>
+                            <td style="width: 8rem;">${allData.address}</td>
+                            <td class="text-nowrap" style="width: 8rem;">
+                              <i class="fa-solid fa-trash"></i>
+                              <i class="fa-regular fa-eye"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Registered Students & Teachers Data End -->
         </div>
       </div>
     </div>
