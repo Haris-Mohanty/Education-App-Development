@@ -449,7 +449,7 @@ const getRegistrationDataFun = () =>{
       <td style="width: 8rem;">${allData.address}</td>
       <td class="text-nowrap" style="width: 8rem;">
         <i class="fa-solid fa-trash del-btn mx-3"></i>
-        <i class="fa-regular fa-eye edit-btn"></i>
+        <i class='fa fa-eye edit-btn' data-bs-toggle="modal" data-bs-target="#MyModal"></i>
       </td>
     </tr>
     `;
