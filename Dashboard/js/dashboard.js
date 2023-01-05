@@ -436,7 +436,7 @@ const getRegistrationDataFun = () =>{
       <th scope="row">${index+1}</th>
       <td>
         <div class="profile">
-          <img src="" alt="" srcset="">
+          <img src="avtar.png" width="40" height="40" style alt="Profile-pic">
         </div>
       </td>
       <td class="text-nowrap" style="width: 8rem;">${allData.name}</td>
@@ -448,12 +448,16 @@ const getRegistrationDataFun = () =>{
       <td class="text-nowrap" style="width: 8rem;">${allData.password}</td>
       <td style="width: 8rem;">${allData.address}</td>
       <td class="text-nowrap" style="width: 8rem;">
-        <i class="fa-solid fa-trash"></i>
-        <i class="fa-regular fa-eye"></i>
+        <i class="fa-solid fa-trash del-btn mx-3"></i>
+        <i class="fa-regular fa-eye edit-btn"></i>
       </td>
     </tr>
     `;
   });
+  //DELETE REGISTERED TEACHER & STUDENTS DATA CODE START
+  let allDelBtnUserdata = registrationDataEl.querySelectorAll(".del-btn");
+  console.log(allDelBtnUserdata)
+  //DELETE REGISTERED DATA CODE END
 };
 getRegistrationDataFun();
 // REGISTRED STUDENT & TEACHERS DATA CODE END
