@@ -396,6 +396,7 @@ let registrationData = [];
 registrationForm.onsubmit = function (e) {
   e.preventDefault();
   registrationFunc();
+  getRegistrationDataFun();//live update
 };
 
 // Get Data code start
@@ -403,7 +404,7 @@ if(localStorage.getItem(brandcode+"_registrationData")!= null){
   registrationData = JSON.parse(localStorage.getItem(brandcode+"_registrationData"));
 }
 // Get Data code end
-
+//insert data in local storage
 const registrationFunc = () => {
   if (userType.value != "choose type") {
     registrationData.push({
@@ -423,8 +424,39 @@ const registrationFunc = () => {
     swal("Invalid Choice!", "Please select a Usertype !", "warning");
   }
 };
-
 //STUDENTS & TEACHERS REGISTRATION FORM CODE END
+
+// REGISTRED STUDENT & TEACHERS DATA CODE START
+const getRegistrationDataFun = () =>{
+  let registrationDataEl = document.querySelector(".registration-data");
+  registrationDataEl.innerHTML = "";
+  registrationData.forEach((allData,index)=>{
+    registrationDataEl.innerHTML += `
+    <tr>
+      <th scope="row">${index+1}</th>
+      <td>
+        <div class="profile">
+          <img src="" alt="" srcset="">
+        </div>
+      </td>
+      <td class="text-nowrap" style="width: 8rem;">${allData.name}</td>
+      <td class="text-nowrap" style="width: 8rem;">${allData.fatherName}</td>
+      <td class="text-nowrap" style="width: 8rem;">${allData.dob}</td>
+      <td class="text-nowrap" style="width: 8rem;">${allData.userType}</td>
+      <td class="text-nowrap" style="width: 8rem;">${allData.mobile}</td>
+      <td class="text-nowrap" style="width: 8rem;">${allData.enrollment}</td>
+      <td class="text-nowrap" style="width: 8rem;">${allData.password}</td>
+      <td style="width: 8rem;">${allData.address}</td>
+      <td class="text-nowrap" style="width: 8rem;">
+        <i class="fa-solid fa-trash"></i>
+        <i class="fa-regular fa-eye"></i>
+      </td>
+    </tr>
+    `;
+  });
+};
+getRegistrationDataFun();
+// REGISTRED STUDENT & TEACHERS DATA CODE END
 
 //TOGGLER CODE / RESPONSIVE CODE START
 let togglersBtn = document.querySelectorAll(".toggler-icon");
