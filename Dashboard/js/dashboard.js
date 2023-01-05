@@ -432,7 +432,7 @@ const getRegistrationDataFun = () =>{
   registrationDataEl.innerHTML = "";
   registrationData.forEach((allData,index)=>{
     registrationDataEl.innerHTML += `
-    <tr>
+    <tr index=${index}>
       <th scope="row">${index+1}</th>
       <td>
         <div class="profile">
@@ -456,7 +456,35 @@ const getRegistrationDataFun = () =>{
   });
   //DELETE REGISTERED TEACHER & STUDENTS DATA CODE START
   let allDelBtnUserdata = registrationDataEl.querySelectorAll(".del-btn");
-  console.log(allDelBtnUserdata)
+  let i;
+  for (i=0; i<allDelBtnUserdata.length; i++){
+    allDelBtnUserdata[i].onclick = function(){
+      let parent = this.parentElement.parentElement;
+      let index = parent.getAttribute("INDEX");
+      //swal start
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          registrationData.splice(index,1);
+          localStorage.setItem(brandcode+"_registrationData", JSON.stringify(registrationData));
+          parent.remove();
+          getRegistrationDataFun();
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
+      //swal end
+    }
+  }
   //DELETE REGISTERED DATA CODE END
 };
 getRegistrationDataFun();
