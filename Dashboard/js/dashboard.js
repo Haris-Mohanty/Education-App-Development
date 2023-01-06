@@ -487,6 +487,33 @@ const getRegistrationDataFun = () =>{
     }
   }
   //DELETE REGISTERED DATA CODE END
+
+  //VIEW REGISTERED DATA START(Modal open and show data)
+  let allEditBtnUserdata = registrationDataEl.querySelectorAll(".edit-btn");
+  let j;
+  for(j=0; j<allEditBtnUserdata.length; j++){
+    allEditBtnUserdata[j].onclick = function(){
+      let parent = this.parentElement.parentElement;
+      let index = parent.getAttribute("index");
+      let td = parent.querySelectorAll("td");
+      let imgUrl = td[0].querySelector("img").src;
+      let nameEl = td[1].innerHTML;
+      let fatherName = td[2].innerHTML;
+      let dob = td[3].innerHTML;
+      let userType = td[4].innerHTML;
+      let mobile = td[5].innerHTML;
+      let enrollment = td[6].innerHTML;
+      let password = td[7].innerHTML;
+      let address = td[8].innerHTML;
+      //Data updating in modal
+      let profileBox = document.querySelector(".img-box");
+      let modalForm = document.querySelector(".modal-from");
+      let allModalInput = modalForm.querySelectorAll("INPUT");
+      let modalTextarea = modalForm.querySelector("textarea");
+      
+    }
+  }
+  //VIEW REGISTERED DATA END
 };
 getRegistrationDataFun();
 // REGISTRED STUDENT & TEACHERS DATA CODE END
