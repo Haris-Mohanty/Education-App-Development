@@ -534,6 +534,10 @@ const getRegistrationDataFun = () =>{
         }
         modalTextarea.disabled = false;
         uploadInput.disabled = false;
+        //Show Update Button After enbled
+        this.classList.add("d-none");
+        let modalUpdateBtn = document.querySelector(".modal-update");
+        modalUpdateBtn.classList.remove("d-none");
       }
     }
   }
