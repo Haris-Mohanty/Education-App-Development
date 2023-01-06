@@ -176,6 +176,9 @@
     font-size: 20px;
     font-weight: bold;
 }
+i{
+    cursor: pointer;
+}
 /* Toggler coding */
 .toggler-box{
     opacity: 0;

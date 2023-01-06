@@ -415,7 +415,8 @@ const registrationFunc = () => {
       mobile : AllRegInput[3].value,
       enrollment : AllRegInput[4].value,
       password : AllRegInput[5].value,
-      address : address.value
+      address : address.value,
+      profilePic : "avtar.png"
     });
     localStorage.setItem(brandcode+"_registrationData", JSON.stringify(registrationData));
     swal("Registration Completed!", "Your Data has been Inserted Successfully !", "success");
@@ -436,7 +437,7 @@ const getRegistrationDataFun = () =>{
       <th scope="row">${index+1}</th>
       <td>
         <div class="profile">
-          <img src="avtar.png" width="40" height="40" style alt="Profile-pic">
+          <img src="${allData.profilePic}" width="40" height="40" style alt="Profile-pic">
         </div>
       </td>
       <td class="text-nowrap" style="width: 8rem;">${allData.name}</td>
