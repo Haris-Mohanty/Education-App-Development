@@ -526,6 +526,15 @@ const getRegistrationDataFun = () =>{
       }
       modalTextarea.disabled = true;
       uploadInput.disabled = true;
+      //Enable Modal Data(After click)
+      let modalEdit = document.querySelector(".modal-edit");
+      modalEdit.onclick = function(){
+        for(j=0; j<allModalInput.length; j++){
+          allModalInput[j].disabled = false;
+        }
+        modalTextarea.disabled = false;
+        uploadInput.disabled = false;
+      }
     }
   }
   //VIEW REGISTERED DATA END
