@@ -507,10 +507,19 @@ const getRegistrationDataFun = () =>{
       let address = td[8].innerHTML;
       //Data updating in modal
       let profileBox = document.querySelector(".img-box");
-      let modalForm = document.querySelector(".modal-from");
+      let modalForm = document.querySelector(".modal-form");
+      console.log(modalForm)
       let allModalInput = modalForm.querySelectorAll("INPUT");
       let modalTextarea = modalForm.querySelector("textarea");
-      
+      profileBox.style.backgroundImage = `url(${imgUrl})`;
+      allModalInput[0].value = nameEl;
+      allModalInput[1].value = fatherName;
+      allModalInput[2].value = dob;
+      allModalInput[3].value = userType;
+      allModalInput[4].value = mobile;
+      allModalInput[5].value = enrollment;
+      allModalInput[6].value = password;
+      modalTextarea.value = address;
     }
   }
   //VIEW REGISTERED DATA END
