@@ -490,9 +490,8 @@ const getRegistrationDataFun = () =>{
 
   //VIEW REGISTERED DATA START(Modal open and show data)
   let allEditBtnUserdata = registrationDataEl.querySelectorAll(".edit-btn");
-  let j;
-  for(j=0; j<allEditBtnUserdata.length; j++){
-    allEditBtnUserdata[j].onclick = function(){
+  for(i=0; i<allEditBtnUserdata.length; i++){
+    allEditBtnUserdata[i].onclick = function(){
       let parent = this.parentElement.parentElement;
       let index = parent.getAttribute("index");
       let td = parent.querySelectorAll("td");
@@ -508,7 +507,7 @@ const getRegistrationDataFun = () =>{
       //Data updating in modal
       let profileBox = document.querySelector(".img-box");
       let modalForm = document.querySelector(".modal-form");
-      console.log(modalForm)
+      let uploadInput = document.querySelector(".upload-input");
       let allModalInput = modalForm.querySelectorAll("INPUT");
       let modalTextarea = modalForm.querySelector("textarea");
       profileBox.style.backgroundImage = `url(${imgUrl})`;
@@ -520,6 +519,13 @@ const getRegistrationDataFun = () =>{
       allModalInput[5].value = enrollment;
       allModalInput[6].value = password;
       modalTextarea.value = address;
+      //Disabled Modal data(When click on edit button then it enabled.)
+      let j;
+      for(j=0; j<allModalInput.length; j++){
+        allModalInput[j].disabled = true;
+      }
+      modalTextarea.disabled = true;
+      uploadInput.disabled = true;
     }
   }
   //VIEW REGISTERED DATA END
