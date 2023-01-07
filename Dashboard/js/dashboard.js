@@ -574,6 +574,8 @@ const getRegistrationDataFun = () =>{
             localStorage.setItem(brandcode+"_registrationData",JSON.stringify(registrationData));
             getRegistrationDataFun();
             modalCloseBtn.click();
+            this.classList.add("d-none");
+            modalEdit.classList.remove("d-none");
               swal("Poof! Your imaginary file has been updated!", {icon: "success",});
             } else {
               swal("Your imaginary file is safe!");
