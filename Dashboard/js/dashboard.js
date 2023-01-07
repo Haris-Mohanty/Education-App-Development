@@ -8,7 +8,7 @@ if (brandcode == null) {
   //Redirecting to Login page
   setTimeout(function () {
     window.location = "../company/company.html";
-  }, 4000);
+  }, 3000);
 }
 let allUserData = JSON.parse(localStorage.getItem(brandcode + "_brand"));
 let brand_name = document.getElementById("brand-name");
@@ -391,6 +391,10 @@ let registrationForm = document.querySelector(".registration-form");
 let AllRegInput = registrationForm.querySelectorAll("INPUT");
 let userType = registrationForm.querySelector("SELECT");
 let address = registrationForm.querySelector("TEXTAREA");
+//for profile pic and data updationg in modal
+let uploadInput = document.querySelector(".upload-input");
+let profileBox = document.querySelector(".img-box");
+let modalImgUrl;
 let registrationData = [];
 
 registrationForm.onsubmit = function (e) {
@@ -505,9 +509,7 @@ const getRegistrationDataFun = () =>{
       let password = td[7].innerHTML;
       let address = td[8].innerHTML;
       //Data updating in modal
-      let profileBox = document.querySelector(".img-box");
       let modalForm = document.querySelector(".modal-form");
-      let uploadInput = document.querySelector(".upload-input");
       let allModalInput = modalForm.querySelectorAll("INPUT");
       let modalTextarea = modalForm.querySelector("textarea");
       profileBox.style.backgroundImage = `url(${imgUrl})`;
@@ -538,12 +540,60 @@ const getRegistrationDataFun = () =>{
         this.classList.add("d-none");
         let modalUpdateBtn = document.querySelector(".modal-update");
         modalUpdateBtn.classList.remove("d-none");
+
+        modalUpdateBtn.onclick = function(){
+          let name = allModalInput[0].value;
+          let fatherName = allModalInput[1].value;
+          let dob = allModalInput[2].value;
+          let userType = allModalInput[3].value;
+          let mobile = allModalInput[4].value;
+          let enrollment = allModalInput[5].value;
+          let password = allModalInput[6].value;
+          let address = modalTextarea.value;
+          swal({
+            title: "Are you sure?",
+            text: "Once updated, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willUpdated) => {
+            if (willUpdated) {
+              registrationData[index] ={
+                name : name,
+                fatherName : fatherName,
+                dob : dob,
+                userType : userType,
+                mobile : mobile,
+                enrollment : enrollment,
+                password : password,
+                address : address,
+                profilePic : modalImgUrl == undefined ? imgUrl : modalImgUrl
+              }
+            localStorage.setItem(brandcode+"_registrationData",JSON.stringify(registrationData));
+            getRegistrationDataFun();
+              swal("Poof! Your imaginary file has been updated!", {icon: "success",});
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });
+        }
       }
     }
   }
   //VIEW REGISTERED DATA END
 };
 getRegistrationDataFun();
+//Read Profile pic
+uploadInput.onchange = function(){
+  let fReader = new FileReader(); //FileReader is an API.(new mandatory)
+  fReader.onload = function(e){
+    modalImgUrl = e.target.result;
+    profileBox.style.backgroundImage = `url(${modalImgUrl})`;
+  }
+  fReader.readAsDataURL(uploadInput.files[0]);
+}
+
 // REGISTRED STUDENT & TEACHERS DATA CODE END
 
 //TOGGLER CODE / RESPONSIVE CODE START
