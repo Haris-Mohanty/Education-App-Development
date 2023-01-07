@@ -512,6 +512,7 @@ const getRegistrationDataFun = () =>{
       let modalForm = document.querySelector(".modal-form");
       let allModalInput = modalForm.querySelectorAll("INPUT");
       let modalTextarea = modalForm.querySelector("textarea");
+      let modalCloseBtn = document.querySelector(".btn-close");
       profileBox.style.backgroundImage = `url(${imgUrl})`;
       allModalInput[0].value = nameEl;
       allModalInput[1].value = fatherName;
@@ -572,6 +573,7 @@ const getRegistrationDataFun = () =>{
               }
             localStorage.setItem(brandcode+"_registrationData",JSON.stringify(registrationData));
             getRegistrationDataFun();
+            modalCloseBtn.click();
               swal("Poof! Your imaginary file has been updated!", {icon: "success",});
             } else {
               swal("Your imaginary file is safe!");
