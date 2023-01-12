@@ -583,6 +583,9 @@ const getRegistrationDataFun = () =>{
           });
         }
       }
+      //Showing modal header name.
+      let modal_head_name = document.getElementById("modal-name-show");
+      modal_head_name.innerHTML = nameEl;
     }
   }
   //VIEW REGISTERED DATA END
@@ -599,6 +602,8 @@ uploadInput.onchange = function(){
 }
 
 // REGISTRED STUDENT & TEACHERS DATA CODE END
+
+
 
 //TOGGLER CODE / RESPONSIVE CODE START
 let togglersBtn = document.querySelectorAll(".toggler-icon");
