@@ -583,7 +583,7 @@ const getRegistrationDataFun = () =>{
           });
         }
       }
-      //Showing modal header name.
+      //Showing modal header and body name.
       let modal_head_name = document.getElementById("modal-name-show");
       modal_head_name.innerHTML = nameEl;
       let show_username = document.getElementById("show-username");
