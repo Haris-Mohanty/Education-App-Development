@@ -25,3 +25,46 @@ body{
     font-size: 1.875rem;
     letter-spacing: 0.8px;
 }
+.input-group-text{
+    background-color: rgb(15, 230, 158);
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: cursive;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
+.form-control{
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+button{
+    width: 100%;
+    color: black;
+    background-color: rgb(23, 240, 244);
+    letter-spacing: 1.4px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.5s;
+}
+button:hover{
+    color: aliceblue;
+    background-color: green;
+    font-family: 'Moon Dance', cursive;
+    transition: 0.7s ease-in-out;
+    transform: translateY(-3px);
+}
+button::after{
+    content: '\00bb';
+    right: -20px;
+    opacity: 0;
+    padding: 5px;
+    transition: 0.5s ease-in-out;
+}
+button:hover::after {
+    opacity: 1;
+    right: 0;
+}
