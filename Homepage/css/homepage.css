@@ -38,6 +38,11 @@ body{
     font-family: 'Times New Roman', Times, serif;
     font-size: 22px;
     font-weight: bold;
+    box-shadow: none !important;
+}
+.form-select{
+    box-shadow: none !important;
+    font-weight: bold;
 }
 button{
     width: 100%;
