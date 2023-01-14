@@ -26,40 +26,47 @@
     <!-- SWEETALERT JS LINK END -->
 
     <!-- FONT AWESOME LINK START -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- FONT AWESOME LINK END -->
   </head>
   <body>
     <div class="container mt-5">
-        <h1 class="text-center fw-bold mb-4">Wel-Come to Online Examination Centre</h1>
-        <div class="row bg-white shadow-lg">
-            <div class="col-md-6">
-                <img src="test-img.gif" class="w-100" srcset="">
-            </div>
-            <div class="col-md-6">
-              <h2>Student & Teacher Login Form</h2>
-              <div class="input-group mt-3 mb-5">
-                <span class="input-group-text">
-                  Choose Brand Code
-                </span>
-                <select name="" id="brand-code-el" class="form-select">
-                  <option value="Choose Brand Code">Choose Brand Code</option>
-                </select>
-              </div>
-              <div class="input-group mb-5">
-                <span class="input-group-text">Enrollment</span>
-                <input type="text" class="form-control">
-              </div>
-              <div class="input-group mb-5">
-                <span class="input-group-text">Passsword</span>
-                <input type="password" class="form-control">
-              </div>
-              <button class="login-btn">Login</button>
-              <a href="../Company/company.html" type="button" class="btn mt-4 w-100 text-white bg-info btn-lg">Create Your Space</a>
-            </div>
+      <h1 class="text-center fw-bold mb-4">
+        Wel-Come to Online Examination Centre
+      </h1>
+      <div class="row bg-white shadow-lg">
+        <div class="col-md-6">
+          <img src="test-img.gif" class="w-100" srcset="" />
         </div>
+        <div class="col-md-6">
+          <h2>Student & Teacher Login Form</h2>
+          <form class="login-form">
+            <div class="input-group mt-3 mb-5">
+              <span class="input-group-text"> Choose Brand Code </span>
+              <select name="" id="brand-code-el" class="form-select">
+                <option value="Choose Brand Code">Choose Brand Code</option>
+              </select>
+            </div>
+            <div class="input-group mb-5">
+              <span class="input-group-text">Enrollment</span>
+              <input type="text" disabled class="form-control" />
+            </div>
+            <div class="input-group mb-5">
+              <span class="input-group-text">Passsword</span>
+              <input type="password" disabled class="form-control" />
+            </div>
+            <button class="login-btn" disabled>Login</button>
+            <a href="../Company/company.html" type="button" class="btn mt-4 w-100 text-white bg-info btn-lg">
+              Create Your Space</a>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
   <!-- DASHBOARD JS FILE LINK START -->
