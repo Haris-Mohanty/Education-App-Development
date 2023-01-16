@@ -11,9 +11,9 @@ for (i = 0; i < localStorage.length; i++) {
 
 // //SHOW BRANDCODE IN "CHOOSE BRAND CODE" OPTION CODE START
 let brandCode_El = document.querySelector("#brand-code-el");
-allBrandKey.forEach((code, index) => {
+allBrandKey.forEach((bcode, index) => {
   brandCode_El.innerHTML += `
-    <option value="${code}">${code}</option>
+    <option value="${bcode}">${bcode}</option>
     `;
 });
 // //SHOW BRANDCODE IN "CHOOSE BRAND CODE" OPTION CODE END
@@ -41,17 +41,29 @@ brandCode_El.addEventListener("change", () => {
 });
 
 const loginUserFun = () => {
-  if(localStorage.getItem(brandCode+"_registrationData") != null){
-    allUserData = JSON.parse(localStorage.getItem(brandCode + "_registrationData"));
+  if (localStorage.getItem(brandCode + "_registrationData") != null) {
+    allUserData = JSON.parse(
+      localStorage.getItem(brandCode + "_registrationData")
+    );
   }
-  loginBtn.onclick = function(){
-    for(i=0; i<allUserData.length; i++){
-      if(allUserData[i].enrollment == allLoginInput[0].value){
-
-      }else{
-        
+  loginBtn.onclick = function () {
+    for (i = 0; i < allUserData.length; i++) {
+      if (allUserData[i].enrollment == allLoginInput[0].value) {
+        if(allUserData[i].password == allLoginInput[1].value){
+          if(allUserData[i].userType == "Teacher"){
+            window.location = "../Dashboard/dashboard.html"
+          }else{
+            window.location = "../Guidelines/guidelines.html"
+          }
+        }else{
+          swal("Incorrect Password!", "Please Contact your Brand Admin !", "error");
+          return;
+        }
+        return;
+      } else {
+        swal("Incorrect Enrollment!", "Please Contact your Brand Admin !", "warning");
       }
     }
-  }
+  };
 };
 // // //LOGIN CODE END
