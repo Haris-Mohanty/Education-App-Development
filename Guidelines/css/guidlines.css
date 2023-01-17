@@ -6,12 +6,8 @@ body{
     background-color: cadetblue;
 }
 .container{
-
+    background-color: rgb(247, 213, 247);
 }
 .container h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     /* color: red; */
 }
