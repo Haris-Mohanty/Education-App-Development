@@ -3,11 +3,11 @@
     margin: 0;
 }
 body{
-    background-color: cadetblue;
+    background-image: linear-gradient(to right, #E8CBC0 ,#636FA4);
 }
 .container{
     background-color: rgb(222, 221, 222);
 }
 .container h3{
-    /* color: red; */
+    color: blueviolet;
 }
