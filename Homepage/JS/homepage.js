@@ -51,8 +51,10 @@ const loginUserFun = () => {
       if (allUserData[i].enrollment == allLoginInput[0].value) {
         if(allUserData[i].password == allLoginInput[1].value){
           if(allUserData[i].userType == "Teacher"){
+            sessionStorage.setItem("brandCode", brandCode);
             window.location = "../Dashboard/dashboard.html"
           }else{
+            sessionStorage.setItem("brandCode", brandCode);
             window.location = "../Guidelines/guidelines.html"
           }
         }else{
