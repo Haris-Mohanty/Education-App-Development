@@ -5,9 +5,63 @@
 body{
     background-image: linear-gradient(to right, #E8CBC0 ,#636FA4);
 }
+h1{
+    color: blueviolet;
+    margin-top: 2%;
+    text-align: center;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 43px;
+    letter-spacing: 1.5px;
+}
 .container{
-    background-color: rgb(222, 221, 222);
+    margin-top: 3%;
+    padding: 55px 0px 22px 0px;
+    background-image: linear-gradient(to right, #E8CBC0 ,#636FA4);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 50px 4px;
 }
 .container h3{
-    color: blueviolet;
+    color: rgb(15, 117, 185);
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.4px;
+    margin-bottom: 35px;
+    font-size: 29px;
+}
+.container ul{
+    color: forestgreen;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 16px;
+}
+.container ul li{
+    margin: 9px;   
+}
+.container .form-select{
+    font-size: 21px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    color: rgb(68, 5, 123);
+}
+button{
+    width: 70%;
+    color: black;
+    background-image: linear-gradient(to right, rgb(62, 218, 238) , rgb(192, 244, 249));
+    letter-spacing: 1.4px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    font-family: 'Moon Dance', cursive;
+    transition: all 0.7s ease-in-out;
+    border-radius: 10px;
+    margin-left: 84px;
+}
+button:hover{
+    width: 73%;
+    color: aliceblue;
+    letter-spacing: 1.6px;
+    background-color: green;
+    background-image: linear-gradient(to right, rgb(11, 200, 81), rgb(15, 98, 15));
+    font-family: 'Moon Dance', cursive;
+    transform: translateY(-5px);
 }

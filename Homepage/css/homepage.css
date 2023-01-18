@@ -10,14 +10,14 @@ body{
     /* color: aqua; */
 }
 .container h1{
-    color: rgb(212, 18, 242);
+    color: rgb(246, 241, 247);
     font-weight: bolder;
     /* font-family: 'font-effect-fire-animation'; */
     font-family: 'Moon Dance', cursive;
     letter-spacing: 1.2px;
 }
 .container h2{
-    color: rgb(229, 25, 110);
+    color: rgb(13, 8, 10);
     text-align: center;
     margin-top: 23px;
     font-family: 'Times New Roman', Times, serif;
