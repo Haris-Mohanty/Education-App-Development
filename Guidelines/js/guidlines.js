@@ -16,7 +16,11 @@ if (localStorage.getItem(brandCode + "_allSubject") != null) {
 //START EXAM BUTTON CODE START
 let startExambtn = document.querySelector(".start-exam-btn");
 startExambtn.onclick = function () {
-    alert()
+  if (selectSubjectEl.value != "Choose Subject") {
+    window.location = "../Question/question.html";
+  } else {
+    swal("Select Subject!", "Please Select a Subject !", "warning");
+  }
 };
 
 //START EXAM BUTTON CODE END
