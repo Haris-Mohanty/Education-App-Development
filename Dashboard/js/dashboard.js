@@ -156,6 +156,7 @@ function updateSubject(subject, id) {
 let choose_subject = document.getElementById("choose-subject");
 let question_form = document.querySelector(".question-form");
 let allQuestionInput = question_form.querySelectorAll("INPUT");
+let choose_options = document.querySelector("#choose-options");
 let select_subject = document.querySelector("#select-subject");
 let allQuestion = [];
 let subject;
@@ -229,7 +230,7 @@ function insertQuestionFunc(sub, id, ques, op1, op2, op3, op4, correctAns) {
         optionTwo: allQuestionInput[2].value,
         optionThree: allQuestionInput[3].value,
         optionFour: allQuestionInput[4].value,
-        optionAns: allQuestionInput[5].value,
+        optionAns: choose_options.value,
       });
       localStorage.setItem(
         brandcode + "_" + choose_subject.value + "_question",
