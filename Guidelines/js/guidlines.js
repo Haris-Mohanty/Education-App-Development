@@ -17,7 +17,9 @@ if (localStorage.getItem(brandCode + "_allSubject") != null) {
 let startExambtn = document.querySelector(".start-exam-btn");
 startExambtn.onclick = function () {
   if (selectSubjectEl.value != "Choose Subject") {
-    window.location = "../Question/question.html";
+    let subject = selectSubjectEl.value;
+    sessionStorage.setItem("subject", subject);
+    window.location = "../Questions/question.html";
   } else {
     swal("Select Subject!", "Please Select a Subject !", "warning");
   }
