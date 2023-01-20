@@ -16,6 +16,7 @@ let wrongAns = 0;
 let questionEl = document.querySelector(".question-el");
 let allOptions = document.querySelectorAll(".option");
 const getQuestionFun = () => {
+  resetFunc(); //RESET function call
   let data = allQuestion[index];
   questionEl.innerHTML = `Q.${index + 1}: ${data.question}`;
   allOptions[0].nextElementSibling.innerHTML = data.optionOne;
@@ -33,22 +34,27 @@ nextBtn.addEventListener("click", () => {
   let ans = getAnswer();
   if (ans == data.optionAns) {
     rightAns++;
-    alert(rightAns);
   } else {
     wrongAns++;
-    alert(wrongAns);
   }
   index++;
-  getQuestionFun();
+  getQuestionFun(); //NEXT page question showing.
   return;
 });
 const getAnswer = () => {
   let answer;
   allOptions.forEach((input) => {
     if (input.checked) {
-      answer = input.value;
+      answer = input.value; //Get options value to Match.
     }
   });
   return answer;
 };
 //NEXT BUTTON CODE END
+
+//WHEN CLICK ON NEXT BUTTON :- AUTO SELECT OFF.
+function resetFunc() {
+  allOptions.forEach((input) => {
+    input.checked = false;
+  });
+}
