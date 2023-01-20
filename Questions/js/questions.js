@@ -1,5 +1,5 @@
 //RECEIVE SESSIONSTORAGE DATA CODE START
-let name = sessionStorage.getItem("name");
+let nameEl = sessionStorage.getItem("name");
 let address = sessionStorage.getItem("address");
 let fatherName = sessionStorage.getItem("fatherName");
 let enrollment = sessionStorage.getItem("enrollment");
@@ -81,6 +81,20 @@ const endExam = () => {
   //SUBMIT BUTTON CODE
   let submitBtn = document.querySelector(".submit-btn");
   submitBtn.onclick = function () {
-    alert();
+    allUserResult();
   };
+};
+
+let allUserResult = [];
+const allUserResultfunc = () => {
+  allUserResult.push({
+    name: nameEl,
+    enrollment: enrollment,
+    rightAns: rightAns,
+    wrongAns: wrongAns,
+    subject: subject,
+    maxMark: totalQues,
+  });
+  localStorage.setItem(brandCode + subject + "_result", JSON.stringify(allUserResult));
+  
 };
