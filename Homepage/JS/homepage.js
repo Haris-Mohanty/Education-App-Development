@@ -54,6 +54,10 @@ const loginUserFun = () => {
             sessionStorage.setItem("brandCode", brandCode);
             window.location = "../Dashboard/dashboard.html"
           }else{
+            sessionStorage.setItem("enrollment", allUserData[i].enrollment);
+            sessionStorage.setItem("name", allUserData[i].name);
+            sessionStorage.setItem("address", allUserData[i].address);
+            sessionStorage.setItem("fatherName", allUserData[i].fatherName);
             sessionStorage.setItem("brandCode", brandCode);
             window.location = "../Guidelines/guidelines.html"
           }

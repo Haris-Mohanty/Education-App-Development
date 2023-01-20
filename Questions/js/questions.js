@@ -1,5 +1,11 @@
+//RECEIVE SESSIONSTORAGE DATA CODE START
+let name = sessionStorage.getItem("name");
+let address = sessionStorage.getItem("address");
+let fatherName = sessionStorage.getItem("fatherName");
+let enrollment = sessionStorage.getItem("enrollment");
 let subject = sessionStorage.getItem("subject");
 let brandCode = sessionStorage.getItem("brandCode");
+//RECEIVE SESSIONSTORAGE DATA CODE END
 let allQuestion = [];
 //GET QUESTION FROM LOCALSTORAGE CODE START
 if (localStorage.getItem(brandCode + "_" + subject + "_question") != null) {
@@ -69,7 +75,12 @@ const endExam = () => {
   mainBox.innerHTML = `
   <h2>Click On Submit to Complete The Examination.</h2>
   <div align = "center">
-  <button class="btn btn-info text-white">Submit</button>
+  <button class="btn btn-info text-white submit-btn">Submit</button>
   </div>
   `;
+  //SUBMIT BUTTON CODE
+  let submitBtn = document.querySelector(".submit-btn");
+  submitBtn.onclick = function () {
+    alert();
+  };
 };
