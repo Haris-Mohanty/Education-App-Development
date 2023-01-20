@@ -80,8 +80,13 @@ const endExam = () => {
   `;
   //SUBMIT BUTTON CODE
   let submitBtn = document.querySelector(".submit-btn");
+  if(localStorage.getItem(brandCode+"_"+subject+"_result") != null){
+    allUserResult = JSON.parse(localStorage.getItem(brandCode+"_"+subject+"_result"));
+  }
   submitBtn.onclick = function () {
-    allUserResult();
+    allUserResultfunc();
+    this.innerHTML = "Redirecting to Homepage...";
+    this.disabled = true;
   };
 };
 
@@ -95,6 +100,14 @@ const allUserResultfunc = () => {
     subject: subject,
     maxMark: totalQues,
   });
-  localStorage.setItem(brandCode + subject + "_result", JSON.stringify(allUserResult));
-  
+  localStorage.setItem(brandCode +"_"+ subject + "_result", JSON.stringify(allUserResult));
+  setTimeout(function () {
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("address");
+    sessionStorage.removeItem("enrollment");
+    sessionStorage.removeItem("fatherName");
+    sessionStorage.removeItem("brandCode");
+    sessionStorage.removeItem("subject");
+    window.location = "../Homepage/homepage.html";
+  }, 2000);
 };
