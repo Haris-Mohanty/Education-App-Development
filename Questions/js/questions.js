@@ -13,9 +13,13 @@ if (localStorage.getItem(brandCode + "_" + subject + "_question") != null) {
 let index = 0;
 let rightAns = 0;
 let wrongAns = 0;
+let totalQues = allQuestion.length;
 let questionEl = document.querySelector(".question-el");
 let allOptions = document.querySelectorAll(".option");
 const getQuestionFun = () => {
+  if (index == totalQues) {
+    return endExam();
+  }
   resetFunc(); //RESET function call
   let data = allQuestion[index];
   questionEl.innerHTML = `Q.${index + 1}: ${data.question}`;
@@ -58,3 +62,14 @@ function resetFunc() {
     input.checked = false;
   });
 }
+
+//AFTER QUESTION FINISH :- (FINISH MESSAGE SHOWING IN MAIN DIV).
+let mainBox = document.querySelector(".main");
+const endExam = () => {
+  mainBox.innerHTML = `
+  <h2>Click On Submit to Complete The Examination.</h2>
+  <div align = "center">
+  <button class="btn btn-info text-white">Submit</button>
+  </div>
+  `;
+};
