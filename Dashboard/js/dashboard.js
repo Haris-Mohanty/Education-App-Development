@@ -610,6 +610,18 @@ uploadInput.onchange = function(){
 
 // REGISTRED STUDENT & TEACHERS DATA CODE END
 
+//GET SUBJECT RELATED RESLUT code start
+let allResult = [];
+subjectResultEl.addEventListener('change', ()=>{
+  if(subjectResultEl.value != "Choose Subject"){
+  if(localStorage.getItem(brandcode+"_"+subjectResultEl.value+"_result") != null){
+    allResult = JSON.parse(localStorage.getItem(brandcode+"_"+subjectResultEl.value+"_result"));
+  }
+  }else{
+    swal("Unselected Subject !", "Please Select a Subject!", "warning");
+  }
+});
+//GET SUBJECT RELATED RESLUT code end
 
 
 //TOGGLER CODE / RESPONSIVE CODE START
