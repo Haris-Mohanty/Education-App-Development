@@ -158,6 +158,7 @@ let question_form = document.querySelector(".question-form");
 let allQuestionInput = question_form.querySelectorAll("INPUT");
 let choose_options = document.querySelector("#choose-options");
 let select_subject = document.querySelector("#select-subject");
+let subjectResultEl = document.querySelector("#subject-result-el");
 let allQuestion = [];
 let subject;
 question_form.addEventListener("submit", (e) => {
@@ -168,10 +169,13 @@ const chooseSubjectFunction = () => {
   allSubject.forEach((subject, index) => {
     choose_subject.innerHTML += `
     <Option>${subject.subjectName}</Option>
-    `;
+    `;  //"Create Subject Related Questions":-Choose Subject
     select_subject.innerHTML += `
     <Option>${subject.subjectName}</Option>
-    `;
+    `;//"Show Subject Related Questions" :- Choose Subject
+    subjectResultEl.innerHTML += `
+    <Option>${subject.subjectName}</Option>
+    `;//"Get Subject Related Result" :- Choose Subject
   });
 };
 chooseSubjectFunction(); //Page reload call
