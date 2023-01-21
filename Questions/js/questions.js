@@ -80,16 +80,22 @@ const endExam = () => {
   `;
   //SUBMIT BUTTON CODE
   let submitBtn = document.querySelector(".submit-btn");
-  if(localStorage.getItem(brandCode+"_"+subject+"_result") != null){
+  //Fix replace code Start
+  if (localStorage.getItem(brandCode+"_"+subject+"_result") != null) {
     allUserResult = JSON.parse(localStorage.getItem(brandCode+"_"+subject+"_result"));
   }
+  if (localStorage.getItem(brandCode+"_"+enrollment+"_result") != null) {
+    particularUserResult = JSON.parse(localStorage.getItem(brandCode+"_"+enrollment+"_result"));
+  }
+  //end replace
   submitBtn.onclick = function () {
     allUserResultfunc();
+    particularUserResultFunc();
     this.innerHTML = "Redirecting to Homepage...";
     this.disabled = true;
   };
 };
-
+//Updating in LocalStorage
 let allUserResult = [];
 const allUserResultfunc = () => {
   allUserResult.push({
@@ -100,7 +106,32 @@ const allUserResultfunc = () => {
     subject: subject,
     maxMark: totalQues,
   });
-  localStorage.setItem(brandCode +"_"+ subject + "_result", JSON.stringify(allUserResult));
+  localStorage.setItem(brandCode + "_" + subject + "_result", JSON.stringify(allUserResult));
+  //After Submit button click Redirecting to Homepage.
+  setTimeout(function () {
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("address");
+    sessionStorage.removeItem("enrollment");
+    sessionStorage.removeItem("fatherName");
+    sessionStorage.removeItem("brandCode");
+    sessionStorage.removeItem("subject");
+    window.location = "../Homepage/homepage.html";
+  }, 2000);
+};
+
+//Result Store in LocalStorage by (Enrollment).
+particularUserResult = [];
+const particularUserResultFunc = () =>{
+  particularUserResult.push({
+    name : nameEl,
+    fatherName : fatherName,
+    enrollment : enrollment,
+    subject : subject,
+    rightAns : rightAns,
+    wrongAns : wrongAns,
+    maxMark : totalQues
+  });
+  localStorage.setItem(brandCode+"_"+enrollment+"_result", JSON.stringify(particularUserResult));
   setTimeout(function () {
     sessionStorage.removeItem("name");
     sessionStorage.removeItem("address");

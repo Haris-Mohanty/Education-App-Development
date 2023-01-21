@@ -42,6 +42,7 @@ h1{
     font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
     color: rgb(68, 5, 123);
+    cursor: pointer;
 }
 button{
     width: 70%;
