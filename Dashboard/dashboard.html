@@ -507,36 +507,28 @@
             <!-- Show Result Start -->
             <div class="col-md-4">
               <ul class="list-group">
-                <li
-                  class="list-group-item text-center"
-                  style="
-                    background-color: rgb(179, 22, 240);
+                <li class="list-group-item text-center"
+                  style="background-color: rgb(179, 22, 240);
                     color: rgb(203, 203, 253);
-                    font-weight: bold;
-                  "
-                >
+                    font-weight: bold;">
                   <h3>Show Result</h3>
                 </li>
               </ul>
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#show-subject">
-                      Update and Delete Subject!
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#get-result">
+                      Find The Result Here!
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse show" id="show-subject">
+                  <div class="accordion-collapse collapse show" id="get-result">
                     <div class="accordion-body">
-                      <div class="visible-subject">
-                        <!-- <div  class="d-flex justify-content-between align-items-center">
-                          <h3>Physics</h3>
-                          <div>
-                            <i class="fa fa-edit mx-2" style="font-size: 22px;"></i>
-                            <i class="fa fa-save mx-2 d-none" style="font-size: 22px;"></i>
-                            <i class="fa fa-trash mx-2" style="font-size: 22px;"></i>
-                          </div>
-                        </div> -->
-                      </div>
+                      <form>
+                        <input type="text" class="form-control mb-3" placeholder="Enter Enrollment No."/>
+                        <div align="end">
+                          <button class="btn subject-btn">Get Result</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -544,7 +536,7 @@
             </div>
             <!-- Show Result End -->
 
-            <!-- Show Subject Related Questions Start -->
+            <!-- Get Subject Related Result -->
             <div class="col-md-8">
               <ul class="list-group">
                 <li
