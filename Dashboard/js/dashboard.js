@@ -612,10 +612,25 @@ uploadInput.onchange = function(){
 
 //GET SUBJECT RELATED RESLUT code start
 let allResult = [];
+let allUserResultBox = document.querySelector(".subject-result-data"); //Select Tbody.
 subjectResultEl.addEventListener('change', ()=>{
+  allUserResultBox.innerHTML = "";
   if(subjectResultEl.value != "Choose Subject"){
   if(localStorage.getItem(brandcode+"_"+subjectResultEl.value+"_result") != null){
     allResult = JSON.parse(localStorage.getItem(brandcode+"_"+subjectResultEl.value+"_result"));
+    allResult.forEach((data,index)=>{
+      allUserResultBox.innerHTML += `
+      <tr>
+        <td class="text-nowrap" style="width: 8rem;">${index+1}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.name}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.enrollment}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.subject}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.rightAns}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.wrongAns}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.maxMark}</td>
+      </tr>
+      `;
+    });
   }
   }else{
     swal("Unselected Subject !", "Please Select a Subject!", "warning");
