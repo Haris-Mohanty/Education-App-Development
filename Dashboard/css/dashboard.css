@@ -179,6 +179,12 @@
 i{
     cursor: pointer;
 }
+/* Start Certificate Coding */
+.certificate-main{
+    width: 800px;
+    height: 1000px;
+    background-color: aquamarine;
+}
 /* Toggler coding */
 .toggler-box{
     opacity: 0;

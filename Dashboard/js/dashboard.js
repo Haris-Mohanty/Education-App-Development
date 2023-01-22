@@ -8,7 +8,7 @@ if (brandcode == null) {
   //Redirecting to Login page
   setTimeout(function () {
     window.location = "../company/company.html";
-  }, 3000);
+  }, 2000);
 }
 let allUserData = JSON.parse(localStorage.getItem(brandcode + "_brand"));
 let brand_name = document.getElementById("brand-name");
