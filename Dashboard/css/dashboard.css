@@ -65,7 +65,7 @@
 
 /* START MAIN BOX CODING */
 .main-box{
-    background-image: linear-gradient(to right,rgb(99, 11, 89),rgb(240, 79, 179));
+    /* background-image: linear-gradient(to right,rgb(99, 11, 89),rgb(240, 79, 179)); */
 }
 .brand-box li{
     border-radius: 0;
@@ -181,9 +181,57 @@ i{
 }
 /* Start Certificate Coding */
 .certificate-main{
-    width: 800px;
+    width: 860px;
     height: 1000px;
-    background-color: aquamarine;
+    position: absolute;
+    top: 67%;
+    left: 53%;
+    transform: translate(-50%, -50%)
+}
+.certificate-main .main-box{
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(to right, rgb(192, 192, 252) , rgb(249, 252, 252)); */
+    position: absolute;
+    top: 55px;
+    left: 0;
+    padding: 0px 50px;
+}
+.certificate-main .main-box .name-box{
+    width: 95%;
+    height: 200px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.certificate-main .main-box .name-box .img-box{
+    width: 30%;
+    height: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.certificate-main .main-box .name-box .img-box p{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.certificate-main .main-box .signature-box{
+    width: 95%;
+    height: 170px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+.certificate-main .main-box .signature-box .sign-box{
+    width: 30%;
+    height: 100%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 /* Toggler coding */
 .toggler-box{
