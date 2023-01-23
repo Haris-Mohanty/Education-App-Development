@@ -186,7 +186,8 @@ i{
     position: absolute;
     top: 67%;
     left: 53%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -48%);
+    border: 7px groove slateblue;
 }
 .certificate-main .main-box{
     width: 100%;
@@ -232,6 +233,14 @@ i{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.certificate-main .certificate-close-btn{
+    position: absolute;
+    right: -5px;
+    top: -7px;
+    font-size: 31px;
+    color: aliceblue;
+
 }
 /* Toggler coding */
 .toggler-box{
