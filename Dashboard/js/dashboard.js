@@ -645,6 +645,9 @@ let certificateForm = document.querySelector(".certificate-form");
 let cirInput = certificateForm.querySelector("INPUT");
 let cirBrandName = certificateMainBox.querySelector(".brand-name");
 let cirAddress = certificateMainBox.querySelector(".brand-address");
+let cirName = certificateMainBox.querySelector(".cir-name");
+let cirEnrollment = certificateMainBox.querySelector(".cir-enrollment");
+let cirFather = certificateMainBox.querySelector(".cir-father");
 //Show result- Get Certificate
 certificateForm.onsubmit = function(e){
   e.preventDefault();
@@ -655,8 +658,10 @@ const getUserResult = () =>{
     if(localStorage.getItem(brandcode+"_"+cirInput.value+"_result") != null){
       let userResultData = JSON.parse(localStorage.getItem(brandcode+"_"+cirInput.value+"_result"));
       certificateMainBox.classList.add("active");
+      //Data Showing in Certificate code Start
       cirBrandName.innerHTML = allUserData.brandName;
       cirAddress.innerHTML = allUserData.address;
+      //Data Showing in Certificate code End
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");
     }
