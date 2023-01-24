@@ -665,9 +665,22 @@ const getUserResult = () =>{
       cirName.innerHTML = userResultData[0].name;
       cirEnrollment.innerHTML = userResultData[0].enrollment;
       cirFather.innerHTML = userResultData[0].fatherName;
+      let totalMark = 0;
+      let mark = 0;
       userResultData.forEach((data,index)=>{
-        console.log(data,index)
+        cirData.innerHTML += `
+        <tr>
+          <td>${index+1}</td>
+          <td>${data.subject}</td>
+          <td>${data.maxMark}</td>
+          <td>${data.rightAns}</td>
+        </tr>
+        `;
+        //grand total
+        totalMark += data.maxMark;
+        mark += data.rightAns;
       });
+      
       //Data Showing in Certificate code End
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");
