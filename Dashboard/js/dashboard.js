@@ -649,6 +649,7 @@ let cirName = certificateMainBox.querySelector(".cir-name");
 let cirEnrollment = certificateMainBox.querySelector(".cir-enrollment");
 let cirFather = certificateMainBox.querySelector(".cir-father");
 let cirData = certificateMainBox.querySelector(".cir-data");
+let cirProfile = certificateMainBox.querySelector(".cir-profile");
 //Show result- Get Certificate
 certificateForm.onsubmit = function(e){
   e.preventDefault();
@@ -656,6 +657,7 @@ certificateForm.onsubmit = function(e){
 }
 const getUserResult = () =>{
   if(cirInput.value != ""){
+    cirData.innerHTML = "";
     if(localStorage.getItem(brandcode+"_"+cirInput.value+"_result") != null){
       let userResultData = JSON.parse(localStorage.getItem(brandcode+"_"+cirInput.value+"_result"));
       certificateMainBox.classList.add("active");
@@ -665,6 +667,7 @@ const getUserResult = () =>{
       cirName.innerHTML = userResultData[0].name;
       cirEnrollment.innerHTML = userResultData[0].enrollment;
       cirFather.innerHTML = userResultData[0].fatherName;
+      cirProfile.src = userResultData[0].profilePic;
       let totalMark = 0;
       let mark = 0;
       userResultData.forEach((data,index)=>{

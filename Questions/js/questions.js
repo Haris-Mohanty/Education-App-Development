@@ -5,6 +5,7 @@ let fatherName = sessionStorage.getItem("fatherName");
 let enrollment = sessionStorage.getItem("enrollment");
 let subject = sessionStorage.getItem("subject");
 let brandCode = sessionStorage.getItem("brandCode");
+let imgUrl = sessionStorage.getItem("imgUrl");
 //RECEIVE SESSIONSTORAGE DATA CODE END
 let allQuestion = [];
 //GET QUESTION FROM LOCALSTORAGE CODE START
@@ -129,7 +130,8 @@ const particularUserResultFunc = () =>{
     subject : subject,
     rightAns : rightAns,
     wrongAns : wrongAns,
-    maxMark : totalQues
+    maxMark : totalQues,
+    profilePic : imgUrl
   });
   localStorage.setItem(brandCode+"_"+enrollment+"_result", JSON.stringify(particularUserResult));
   setTimeout(function () {
