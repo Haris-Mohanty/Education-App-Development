@@ -680,7 +680,9 @@ const getUserResult = () =>{
         totalMark += data.maxMark;
         mark += data.rightAns;
       });
-      
+      let cirTotal = certificateMainBox.querySelectorAll(".cir-total");
+      cirTotal[0].innerHTML = totalMark;
+      cirTotal[1].innerHTML = mark;
       //Data Showing in Certificate code End
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");

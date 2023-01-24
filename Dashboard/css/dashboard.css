@@ -255,6 +255,13 @@ i{
     font-size: 35px;
     transform: translateY(-4px);
 }
+.certificate-main .main-box .table .cir-data{
+    border-bottom: 3px solid black;
+}
+.certificate-main .main-box .table .cir-head{
+    border-bottom: 3px solid black;
+}
+
 /* Toggler coding */
 .toggler-box{
     opacity: 0;
