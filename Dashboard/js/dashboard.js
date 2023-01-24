@@ -655,6 +655,8 @@ const getUserResult = () =>{
     if(localStorage.getItem(brandcode+"_"+cirInput.value+"_result") != null){
       let userResultData = JSON.parse(localStorage.getItem(brandcode+"_"+cirInput.value+"_result"));
       certificateMainBox.classList.add("active");
+      cirBrandName.innerHTML = allUserData.brandName;
+      cirAddress.innerHTML = allUserData.address;
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");
     }
