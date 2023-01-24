@@ -59,6 +59,7 @@ const loginUserFun = () => {
             sessionStorage.setItem("address", allUserData[i].address);
             sessionStorage.setItem("fatherName", allUserData[i].fatherName);
             sessionStorage.setItem("brandCode", brandCode);
+            sessionStorage.setItem("imgUrl", allUserData[i].profilePic)
             window.location = "../Guidelines/guidelines.html"
           }
         }else{
@@ -71,5 +72,6 @@ const loginUserFun = () => {
       }
     }
   };
+  console.log(allUserData)
 };
 // // //LOGIN CODE END
