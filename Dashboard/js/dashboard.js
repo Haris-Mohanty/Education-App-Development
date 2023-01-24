@@ -661,6 +661,9 @@ const getUserResult = () =>{
       //Data Showing in Certificate code Start
       cirBrandName.innerHTML = allUserData.brandName;
       cirAddress.innerHTML = allUserData.address;
+      cirName.innerHTML = userResultData[0].name;
+      cirEnrollment.innerHTML = userResultData[0].enrollment;
+      cirFather.innerHTML = userResultData[0].fatherName;
       //Data Showing in Certificate code End
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");
