@@ -643,6 +643,8 @@ let cerClosebtn = document.querySelector(".certificate-close-btn");
 let certificateMainBox = document.querySelector(".certificate-main");
 let certificateForm = document.querySelector(".certificate-form");
 let cirInput = certificateForm.querySelector("INPUT");
+let cirBrandName = certificateMainBox.querySelector(".brand-name");
+let cirAddress = certificateMainBox.querySelector(".brand-address");
 //Show result- Get Certificate
 certificateForm.onsubmit = function(e){
   e.preventDefault();

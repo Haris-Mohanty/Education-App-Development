@@ -248,7 +248,12 @@ i{
     top: -7px;
     font-size: 31px;
     color: aliceblue;
-    box-shadow: none;
+    transition: 1s ease;
+}
+.certificate-main .certificate-close-btn:hover{
+    color: rgb(231, 37, 44);
+    font-size: 35px;
+    transform: translateY(-4px);
 }
 /* Toggler coding */
 .toggler-box{
