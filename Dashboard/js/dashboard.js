@@ -648,6 +648,7 @@ let cirAddress = certificateMainBox.querySelector(".brand-address");
 let cirName = certificateMainBox.querySelector(".cir-name");
 let cirEnrollment = certificateMainBox.querySelector(".cir-enrollment");
 let cirFather = certificateMainBox.querySelector(".cir-father");
+let cirData = certificateMainBox.querySelector(".cir-data");
 //Show result- Get Certificate
 certificateForm.onsubmit = function(e){
   e.preventDefault();
@@ -664,6 +665,9 @@ const getUserResult = () =>{
       cirName.innerHTML = userResultData[0].name;
       cirEnrollment.innerHTML = userResultData[0].enrollment;
       cirFather.innerHTML = userResultData[0].fatherName;
+      userResultData.forEach((data,index)=>{
+        console.log(data,index)
+      });
       //Data Showing in Certificate code End
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");
