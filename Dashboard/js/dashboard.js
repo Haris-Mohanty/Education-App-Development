@@ -651,7 +651,8 @@ certificateForm.onsubmit = function(e){
 const getUserResult = () =>{
   if(cirInput.value != ""){
     if(localStorage.getItem(brandcode+"_"+cirInput.value+"_result") != null){
-      alert("d")
+      let userResultData = JSON.parse(localStorage.getItem(brandcode+"_"+cirInput.value+"_result"));
+      console.log(userResultData)
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");
     }
