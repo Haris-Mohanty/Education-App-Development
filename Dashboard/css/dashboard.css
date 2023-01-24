@@ -184,10 +184,18 @@ i{
     width: 860px;
     height: 1000px;
     position: absolute;
-    top: 67%;
-    left: 53%;
+    top: 15%;
+    left: 27%;
     transform: translate(-50%, -48%);
     border: 7px groove slateblue;
+    opacity: 0;
+    z-index: -100;
+}
+.certificate-main.active{
+    opacity: 1;
+    z-index: 100;
+    animation-name: fadeInDown;
+    animation-duration: 1s ease;
 }
 .certificate-main .main-box{
     width: 100%;
@@ -240,7 +248,7 @@ i{
     top: -7px;
     font-size: 31px;
     color: aliceblue;
-
+    box-shadow: none;
 }
 /* Toggler coding */
 .toggler-box{

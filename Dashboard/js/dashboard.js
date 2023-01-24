@@ -638,6 +638,34 @@ subjectResultEl.addEventListener('change', ()=>{
 });
 //GET SUBJECT RELATED RESLUT code end
 
+//CERTIFICATE CODE START
+let cerClosebtn = document.querySelector(".certificate-close-btn");
+let certificateMainBox = document.querySelector(".certificate-main");
+let certificateForm = document.querySelector(".certificate-form");
+let cirInput = certificateForm.querySelector("INPUT");
+//Show result- Get Certificate
+certificateForm.onsubmit = function(e){
+  e.preventDefault();
+  getUserResult();
+}
+const getUserResult = () =>{
+  if(cirInput.value != ""){
+    if(localStorage.getItem(brandcode+"_"+cirInput.value+"_result") != null){
+      alert("d")
+    }else{
+    swal("No Result Found !", "Please Check the Enrollment No!", "warning");
+    }
+  }else{
+    swal("Empty Field !", "Please Enter the Enrollment No!", "warning");
+  }
+}
+
+
+//Closing Modal Code
+cerClosebtn.onclick = function(){
+  certificateMainBox.classList.remove("active");
+}
+//CERTIFICATE CODE END
 
 //TOGGLER CODE / RESPONSIVE CODE START
 let togglersBtn = document.querySelectorAll(".toggler-icon");
