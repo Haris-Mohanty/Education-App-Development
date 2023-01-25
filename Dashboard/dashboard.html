@@ -109,9 +109,7 @@
                   style="
                     background-color: rgb(179, 22, 240);
                     color: rgb(203, 203, 253);
-                    font-weight: bold;
-                  "
-                >
+                    font-weight: bold;">
                   <h3>Create Subject</h3>
                 </li>
               </ul>
@@ -148,10 +146,7 @@
                   class="list-group-item text-center"
                   style="
                     background-color: rgb(179, 22, 240);
-                    color: rgb(203, 203, 253);
-                    font-weight: bold;
-                  "
-                >
+                    color: rgb(203, 203, 253); font-weight: bold;">
                   <h3>Create Subject Related Questions</h3>
                 </li>
               </ul>
@@ -455,7 +450,7 @@
                       All Type Of User Data
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse show" id="registration-form-show">
+                  <div class="accordion-collapse collapse" id="registration-form-show">
                     <div class="accordion-body" style="overflow-x: scroll">
                       <table class="table">
                         <thead>
@@ -503,6 +498,99 @@
             </div>
           </div>
           <!-- Registered Students & Teachers Data End -->
+          <div class="row mt-2">
+            <!-- Show Result Start -->
+            <div class="col-md-4">
+              <ul class="list-group">
+                <li class="list-group-item text-center"
+                  style="background-color: rgb(179, 22, 240);
+                    color: rgb(203, 203, 253);
+                    font-weight: bold;">
+                  <h3>Show Result</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#get-result">
+                      Get the Certificate !
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse collapse show" id="get-result">
+                    <div class="accordion-body">
+                      <form class="certificate-form">
+                        <input type="text" class="form-control mb-3" placeholder="Enter Enrollment No."/>
+                        <div align="end">
+                          <button class="btn subject-btn">Get Result</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Show Result End -->
+
+            <!-- Get Subject Related Result code start -->
+            <div class="col-md-8">
+              <ul class="list-group">
+                <li
+                  class="list-group-item text-center"
+                  style="
+                    background-color: rgb(179, 22, 240);
+                    color: rgb(203, 203, 253);
+                    font-weight: bold;
+                  "
+                >
+                  <h3>Get Subject Related Result</h3>
+                </li>
+              </ul>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#subject-result">
+                      Click to Show the Result
+                    </button>
+                  </h2>
+                  <div class="accordion-collapse collapse show" id="subject-result">
+                    <div class="accordion-body">
+                      <select id="subject-result-el" class="form-select mb-3">
+                        <option value="Choose Subject">Choose Subject</option>
+                      </select>
+                      <table class="table table-responsive table-striped">
+                        <thead>
+                          <tr>
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Enrollment</th>
+                            <th>Subject</th>
+                            <th class="text-nowrap">Correct Answer</th>
+                            <th class="text-nowrap">Wrong Answer</th>
+                            <th>Out Of</th>
+                          </tr>
+                        </thead>
+                        <tbody class="subject-result-data">
+                          <!-- <tr>
+                            <td class="text-nowrap" style="width: 8rem;">1</td>
+                            <td class="text-nowrap" style="width: 8rem;">Haris</td>
+                            <td class="text-nowrap" style="width: 8rem;">12541</td>
+                            <td class="text-nowrap" style="width: 8rem;">Hindi</td>
+                            <td class="text-nowrap" style="width: 8rem;">4</td>
+                            <td class="text-nowrap" style="width: 8rem;">0</td>
+                            <td class="text-nowrap" style="width: 8rem;">4</td>
+                          </tr> -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Get Subject Related Result code End -->
+          </div>
         </div>
       </div>
     </div>
@@ -584,7 +672,71 @@
       </div>
     </div>
 
-    <!-- Registered Students & Teachers Data View Button code end -->
+    <!-- Registered Students & Teachers Data View Button code end(MODAL) -->
+
+    <!-- Certificate Code Start -->
+    <div class="certificate-main">
+      <button class="btn certificate-close-btn"><i class="fa fa-times-circle"></i></button>
+      <img src="cirtificate.png" width="100%" height="100%" alt="" srcset="">
+      <div class="main-box">
+        <h1 class="text-center brand-name">Just For Code</h1>
+        <p class="text-center brand-address">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, qui.</p>
+        <div class="name-box">
+          <div class="img-box">
+            <img src="avtar.png" class="cir-profile" width="100%" height="100%" alt="" srcset="">
+          </div>
+          <div class="img-box">
+            <p>Name : </p>
+            <p>Enrollment : </p>
+            <p>Father's Name : </p>
+          </div>
+          <div class="img-box">
+            <p class="cir-name">Hari</p>
+            <p class="cir-enrollment">17020</p>
+            <p class="cir-father">Xyz</p>
+          </div>
+        </div>
+        <h2 class="mt-4">Result :-</h2>
+        <table class="table table-striped">
+          <thead class="cir-head">
+            <tr>
+              <th>S/N</th>
+              <th>SUBJECTS</th>
+              <th>FULL MARKS</th>
+              <th>MARKS SECURED</th>
+            </tr>
+          </thead>
+          <tbody class="cir-data">
+            <!-- <tr>
+              <td>1</td>
+              <td>Odia</td>
+              <td>50</td>
+              <td>34</td>
+            </tr> -->
+          </tbody>
+          <thead>
+            <tr>
+              <td></td>
+              <th>GRAND TOTAL :-</th>
+              <th class="cir-total">20</th>
+              <th class="cir-total">75</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="signature-box">
+          <div class="sign-box" style="border-right: 2px solid black;">
+            
+          </div>
+          <div class="sign-box">
+           
+          </div>
+          <div class="sign-box" style="border-left: 2px solid black;">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Certificate Code End -->
   </body>
   <!-- DASHBOARD JS FILE LINK START -->
   <script src="js/dashboard.js"></script>

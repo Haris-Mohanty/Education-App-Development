@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: aquamarine;
+    background-image: linear-gradient(to right, #5f2c82, #49a09d);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ body{
 
 }
 .main{
-    background-color: aliceblue;
+    background-color: rgb(249, 242, 247);
     padding: 22px;
 }
 .main h2{
@@ -31,5 +31,8 @@ body{
     background-color: green;
     width: 35%;
     color: white;
+    cursor: pointer;
+}
+input{
     cursor: pointer;
 }

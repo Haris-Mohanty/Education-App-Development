@@ -8,7 +8,7 @@ if (brandcode == null) {
   //Redirecting to Login page
   setTimeout(function () {
     window.location = "../company/company.html";
-  }, 3000);
+  }, 2000);
 }
 let allUserData = JSON.parse(localStorage.getItem(brandcode + "_brand"));
 let brand_name = document.getElementById("brand-name");
@@ -158,6 +158,7 @@ let question_form = document.querySelector(".question-form");
 let allQuestionInput = question_form.querySelectorAll("INPUT");
 let choose_options = document.querySelector("#choose-options");
 let select_subject = document.querySelector("#select-subject");
+let subjectResultEl = document.querySelector("#subject-result-el");
 let allQuestion = [];
 let subject;
 question_form.addEventListener("submit", (e) => {
@@ -168,10 +169,13 @@ const chooseSubjectFunction = () => {
   allSubject.forEach((subject, index) => {
     choose_subject.innerHTML += `
     <Option>${subject.subjectName}</Option>
-    `;
+    `;  //"Create Subject Related Questions":-Choose Subject
     select_subject.innerHTML += `
     <Option>${subject.subjectName}</Option>
-    `;
+    `;//"Show Subject Related Questions" :- Choose Subject
+    subjectResultEl.innerHTML += `
+    <Option>${subject.subjectName}</Option>
+    `;//"Get Subject Related Result" :- Choose Subject
   });
 };
 chooseSubjectFunction(); //Page reload call
@@ -606,7 +610,97 @@ uploadInput.onchange = function(){
 
 // REGISTRED STUDENT & TEACHERS DATA CODE END
 
+//GET SUBJECT RELATED RESLUT code start
+let allResult = [];
+let allUserResultBox = document.querySelector(".subject-result-data"); //Select Tbody.
+subjectResultEl.addEventListener('change', ()=>{
+  allUserResultBox.innerHTML = "";
+  if(subjectResultEl.value != "Choose Subject"){
+  if(localStorage.getItem(brandcode+"_"+subjectResultEl.value+"_result") != null){
+    allResult = JSON.parse(localStorage.getItem(brandcode+"_"+subjectResultEl.value+"_result"));
+    allResult.forEach((data,index)=>{
+      allUserResultBox.innerHTML += `
+      <tr>
+        <td class="text-nowrap" style="width: 8rem;">${index+1}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.name}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.enrollment}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.subject}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.rightAns}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.wrongAns}</td>
+        <td class="text-nowrap" style="width: 8rem;">${data.maxMark}</td>
+      </tr>
+      `;
+    });
+  }
+  }else{
+    swal("Unselected Subject !", "Please Select a Subject!", "warning");
+  }
+});
+//GET SUBJECT RELATED RESLUT code end
 
+//CERTIFICATE CODE START
+let cerClosebtn = document.querySelector(".certificate-close-btn");
+let certificateMainBox = document.querySelector(".certificate-main");
+let certificateForm = document.querySelector(".certificate-form");
+let cirInput = certificateForm.querySelector("INPUT");
+let cirBrandName = certificateMainBox.querySelector(".brand-name");
+let cirAddress = certificateMainBox.querySelector(".brand-address");
+let cirName = certificateMainBox.querySelector(".cir-name");
+let cirEnrollment = certificateMainBox.querySelector(".cir-enrollment");
+let cirFather = certificateMainBox.querySelector(".cir-father");
+let cirData = certificateMainBox.querySelector(".cir-data");
+let cirProfile = certificateMainBox.querySelector(".cir-profile");
+//Show result- Get Certificate
+certificateForm.onsubmit = function(e){
+  e.preventDefault();
+  getUserResult();
+}
+const getUserResult = () =>{
+  if(cirInput.value != ""){
+    cirData.innerHTML = "";
+    if(localStorage.getItem(brandcode+"_"+cirInput.value+"_result") != null){
+      let userResultData = JSON.parse(localStorage.getItem(brandcode+"_"+cirInput.value+"_result"));
+      certificateMainBox.classList.add("active");
+      //Data Showing in Certificate code Start
+      cirBrandName.innerHTML = allUserData.brandName;
+      cirAddress.innerHTML = allUserData.address;
+      cirName.innerHTML = userResultData[0].name;
+      cirEnrollment.innerHTML = userResultData[0].enrollment;
+      cirFather.innerHTML = userResultData[0].fatherName;
+      cirProfile.src = userResultData[0].profilePic;
+      let totalMark = 0;
+      let mark = 0;
+      userResultData.forEach((data,index)=>{
+        cirData.innerHTML += `
+        <tr>
+          <td>${index+1}</td>
+          <td>${data.subject}</td>
+          <td>${data.maxMark}</td>
+          <td>${data.rightAns}</td>
+        </tr>
+        `;
+        //grand total
+        totalMark += data.maxMark;
+        mark += data.rightAns;
+      });
+      let cirTotal = certificateMainBox.querySelectorAll(".cir-total");
+      cirTotal[0].innerHTML = totalMark;
+      cirTotal[1].innerHTML = mark;
+      //Data Showing in Certificate code End
+    }else{
+    swal("No Result Found !", "Please Check the Enrollment No!", "warning");
+    }
+  }else{
+    swal("Empty Field !", "Please Enter the Enrollment No!", "warning");
+  }
+}
+
+
+//Closing Modal Code
+cerClosebtn.onclick = function(){
+  certificateMainBox.classList.remove("active");
+}
+//CERTIFICATE CODE END
 
 //TOGGLER CODE / RESPONSIVE CODE START
 let togglersBtn = document.querySelectorAll(".toggler-icon");
