@@ -182,19 +182,13 @@ chooseSubjectFunction(); //Page reload call
 
 //SHOW SUBJECT RELATED QUESTION (Choose value)
 //First option select start
-let first_option = choose_subject.querySelectorAll("OPTION")[1];
 
 choose_subject.addEventListener("change", () => {
   checkSubject();
   checkSubjectKey();
 });
 function checkSubject() {
-  if (choose_subject.value == "choose subject") {
-    //"choose subject" is <option> value in form
-    subject = first_option.value;
-  } else {
     subject = choose_subject.value;
-  }
 }
 checkSubject(); //Page reload call
 //Question update in localstorage successfully code start
