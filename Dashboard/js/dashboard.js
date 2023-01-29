@@ -681,6 +681,16 @@ const getUserResult = () =>{
       cirTotal[0].innerHTML = totalMark;
       cirTotal[1].innerHTML = mark;
       //Data Showing in Certificate code End
+      //FAIL AND PASS SHOW
+      let finalResult = (mark/totalMark*100).toFixed(2);
+      let finalResultBox = document.querySelector(".final-result-box");
+      if(finalResult<= 32.99){
+        finalResultBox.innerHTML = "Fail";
+        finalResultBox.style.color = "#eb0909";
+      }else{
+        finalResultBox.innerHTML = "Pass";
+        finalResultBox.style.color = "#26f01f";
+      }
     }else{
     swal("No Result Found !", "Please Check the Enrollment No!", "warning");
     }

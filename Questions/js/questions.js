@@ -95,6 +95,7 @@ const endExam = () => {
     this.innerHTML = "Redirecting to Homepage...";
     this.disabled = true;
   };
+  console.log(submitBtn)
 };
 //Updating in LocalStorage
 let allUserResult = [];
