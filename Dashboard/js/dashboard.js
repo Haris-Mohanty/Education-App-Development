@@ -407,6 +407,16 @@ if(localStorage.getItem(brandcode+"_registrationData")!= null){
   registrationData = JSON.parse(localStorage.getItem(brandcode+"_registrationData"));
 }
 // Get Data code end
+//Enrollment no. not same to other enrollment no./ enrollment no. is unique
+function checkEnrollment(){
+  let i;
+  for(i=0; i<registrationData.length; i++){
+    if(registrationData[i].enrollment == AllRegInput[4].value){
+      
+    }
+  }
+}
+checkEnrollment();
 //insert data in local storage
 const registrationFunc = () => {
   if (userType.value != "choose type") {
@@ -698,7 +708,6 @@ const getUserResult = () =>{
     swal("Empty Field !", "Please Enter the Enrollment No!", "warning");
   }
 }
-
 
 //Closing Modal Code
 cerClosebtn.onclick = function(){
