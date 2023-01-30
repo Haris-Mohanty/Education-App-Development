@@ -398,8 +398,13 @@ let registrationData = [];
 
 registrationForm.onsubmit = function (e) {
   e.preventDefault();
-  registrationFunc();
-  getRegistrationDataFun();//live update
+  let checkData = checkEnrollment();
+  if(checkData == "find"){
+    swal("Already Exists!", "Please Change the Enrollment no. !", "warning");
+  }else{
+    registrationFunc();
+    getRegistrationDataFun();//live update
+  }
 };
 
 // Get Data code start
@@ -410,11 +415,16 @@ if(localStorage.getItem(brandcode+"_registrationData")!= null){
 //Enrollment no. not same to other enrollment no./ enrollment no. is unique
 function checkEnrollment(){
   let i;
+  let checkData = "";
   for(i=0; i<registrationData.length; i++){
     if(registrationData[i].enrollment == AllRegInput[4].value){
-      
+      checkData = "find";
+      break;
+    }else{
+      checkData = "Not found";
     }
   }
+  return checkData;
 }
 checkEnrollment();
 //insert data in local storage
