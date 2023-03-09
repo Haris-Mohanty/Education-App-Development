@@ -69,7 +69,8 @@
 }
 .brand-box li{
     border-radius: 0;
-    background-color: antiquewhite;
+    background-color: rgb(120, 8, 164);
+    color: #f4eaea;
 }
 .main-box .teacher-box li{
     border-radius: 0;

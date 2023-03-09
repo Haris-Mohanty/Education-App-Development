@@ -34,6 +34,17 @@
     />
     <!-- FONT AWESOME LINK END -->
 
+    <!-- GOOGLE FONT LINK START -->
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <!-- GOOGLE FONT LINK END -->
+    
     <title>Dashboard</title>
   </head>
   <body>
@@ -109,7 +120,9 @@
                   style="
                     background-color: rgb(179, 22, 240);
                     color: rgb(203, 203, 253);
-                    font-weight: bold;">
+                    font-weight: bold;
+                  "
+                >
                   <h3>Create Subject</h3>
                 </li>
               </ul>
@@ -119,7 +132,8 @@
                     <button
                       class="accordion-button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#create-subject">
+                      data-bs-target="#create-subject"
+                    >
                       Create Subject
                     </button>
                   </h2>
@@ -146,7 +160,10 @@
                   class="list-group-item text-center"
                   style="
                     background-color: rgb(179, 22, 240);
-                    color: rgb(203, 203, 253); font-weight: bold;">
+                    color: rgb(203, 203, 253);
+                    font-weight: bold;
+                  "
+                >
                   <h3>Create Subject Related Questions</h3>
                 </li>
               </ul>
@@ -164,11 +181,21 @@
                   <div class="accordion-collapse collapse" id="create-question">
                     <div class="accordion-body">
                       <form class="question-form">
-                        <select name="" id="choose-subject" class="form-select mb-3">
+                        <select
+                          name=""
+                          id="choose-subject"
+                          class="form-select mb-3"
+                        >
                           <option value="choose subject">Choose Subject</option>
                         </select>
                         <label for="question">Enter your Question here !</label>
-                        <input type="text" required class="form-control subject mb-3" id="question" placeholder="Write the Question!"/>
+                        <input
+                          type="text"
+                          required
+                          class="form-control subject mb-3"
+                          id="question"
+                          placeholder="Write the Question!"
+                        />
                         <label for="option-one">Option-1</label>
                         <input
                           type="text"
@@ -197,8 +224,13 @@
                           class="form-control subject mb-3"
                           id="option-four"
                         />
-                        <select name="" id="choose-options" class="form-select mb-3">
-                          <option value="choose-options">Choose Correct Options
+                        <select
+                          name=""
+                          id="choose-options"
+                          class="form-select mb-3"
+                        >
+                          <option value="choose-options">
+                            Choose Correct Options
                           </option>
                           <option value="Option-1">Option-1</option>
                           <option value="Option-2">Option-2</option>
@@ -450,7 +482,10 @@
                       All Type Of User Data
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse" id="registration-form-show">
+                  <div
+                    class="accordion-collapse collapse"
+                    id="registration-form-show"
+                  >
                     <div class="accordion-body" style="overflow-x: scroll">
                       <table class="table">
                         <thead>
@@ -502,24 +537,36 @@
             <!-- Show Result Start -->
             <div class="col-md-4">
               <ul class="list-group">
-                <li class="list-group-item text-center"
-                  style="background-color: rgb(179, 22, 240);
+                <li
+                  class="list-group-item text-center"
+                  style="
+                    background-color: rgb(179, 22, 240);
                     color: rgb(203, 203, 253);
-                    font-weight: bold;">
+                    font-weight: bold;
+                  "
+                >
                   <h3>Show Result</h3>
                 </li>
               </ul>
               <div class="accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#get-result">
+                    <button
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#get-result"
+                    >
                       Get the Certificate !
                     </button>
                   </h2>
                   <div class="accordion-collapse collapse show" id="get-result">
                     <div class="accordion-body">
                       <form class="certificate-form">
-                        <input type="text" class="form-control mb-3" placeholder="Enter Enrollment No."/>
+                        <input
+                          type="text"
+                          class="form-control mb-3"
+                          placeholder="Enter Enrollment No."
+                        />
                         <div align="end">
                           <button class="btn subject-btn">Get Result</button>
                         </div>
@@ -551,11 +598,15 @@
                     <button
                       class="accordion-button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#subject-result">
+                      data-bs-target="#subject-result"
+                    >
                       Click to Show the Result
                     </button>
                   </h2>
-                  <div class="accordion-collapse collapse show" id="subject-result">
+                  <div
+                    class="accordion-collapse collapse show"
+                    id="subject-result"
+                  >
                     <div class="accordion-body">
                       <select id="subject-result-el" class="form-select mb-3">
                         <option value="Choose Subject">Choose Subject</option>
@@ -595,12 +646,19 @@
       </div>
     </div>
     <!-- Registered Students & Teachers Data View Button code start (MODAL) -->
-    <div class="modal user-profile-box animate__animated animate__fadeInDown" id="MyModal">
+    <div
+      class="modal user-profile-box animate__animated animate__fadeInDown"
+      id="MyModal"
+    >
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h3 id="modal-name-show" class="fw-bold"></h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
           </div>
           <div class="modal-body">
             <div class="row">
@@ -608,11 +666,14 @@
                 <div class="profile-box mb-3">
                   <div class="img-box">
                     <button class="btn"><i class="fa fa-add"></i></button>
-                    <input type="file" class="upload-input">
+                    <input type="file" class="upload-input" />
                   </div>
-                  <br>
+                  <br />
                   <h3 id="show-username"></h3>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque rem quasi expedita debitis!</p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Atque rem quasi expedita debitis!
+                  </p>
                 </div>
                 <div class="date-box">
                   <div class="icon-box">
@@ -620,46 +681,45 @@
                     <h2>May</h2>
                     <i class="fa-solid fa-caret-right mx-2"></i>
                   </div>
-                  <br>
+                  <br />
                   <h1>27</h1>
-                  <br>
+                  <br />
                 </div>
               </div>
               <div class="col-md-8">
                 <form class="modal-form">
                   <div class="input-group mb-3">
                     <span class="input-group-text">Name</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Father's Name</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Date Of Birth</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text">User Type</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Mobile</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Enrollment</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Passsword</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" />
                   </div>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Address</span>
                     <textarea name="" id="" class="form-control"></textarea>
                   </div>
-
                 </form>
               </div>
             </div>
@@ -676,19 +736,31 @@
 
     <!-- Certificate Code Start -->
     <div class="certificate-main">
-      <button class="btn certificate-close-btn"><i class="fa fa-times-circle"></i></button>
-      <img src="cirtificate.png" width="100%" height="100%" alt="" srcset="">
+      <button class="btn certificate-close-btn">
+        <i class="fa fa-times-circle"></i>
+      </button>
+      <img src="cirtificate.png" width="100%" height="100%" alt="" srcset="" />
       <div class="main-box">
         <h1 class="text-center brand-name">Just For Code</h1>
-        <p class="text-center brand-address">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, qui.</p>
+        <p class="text-center brand-address">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+          qui.
+        </p>
         <div class="name-box">
           <div class="img-box">
-            <img src="avtar.png" class="cir-profile" width="100%" height="100%" alt="" srcset="">
+            <img
+              src="avtar.png"
+              class="cir-profile"
+              width="100%"
+              height="100%"
+              alt=""
+              srcset=""
+            />
           </div>
           <div class="img-box">
-            <p>Name : </p>
-            <p>Enrollment : </p>
-            <p>Father's Name : </p>
+            <p>Name :</p>
+            <p>Enrollment :</p>
+            <p>Father's Name :</p>
           </div>
           <div class="img-box">
             <p class="cir-name">Hari</p>
@@ -724,15 +796,9 @@
           </thead>
         </table>
         <div class="signature-box">
-          <div class="sign-box" style="border-right: 2px solid black;">
-            
-          </div>
-          <div class="sign-box final-result-box">
-           
-          </div>
-          <div class="sign-box" style="border-left: 2px solid black;">
-            
-          </div>
+          <div class="sign-box" style="border-right: 2px solid black"></div>
+          <div class="sign-box final-result-box"></div>
+          <div class="sign-box" style="border-left: 2px solid black"></div>
         </div>
       </div>
     </div>
