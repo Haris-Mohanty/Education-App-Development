@@ -91,14 +91,13 @@ const endExam = () => {
   //end replace
   submitBtn.onclick = function () {
     //set cookie
-    document.cookie = brandCode+"_"+subject+"_"+enrollment+"=done;max-age = 86400"; //86400s means 1day
-    // allUserResultfunc();
-    // particularUserResultFunc();
-    // this.innerHTML = "Redirecting to Homepage...";
-    // this.disabled = true;
+    document.cookie = brandCode+"_"+subject+"_"+enrollment+"=done;max-age = 86400;path=/"; //86400s means 1day
+    allUserResultfunc();
+    particularUserResultFunc();
+    this.innerHTML = "Redirecting to Homepage...";
+    this.disabled = true;
   };
 };
-alert(document.cookie)
 //Updating in LocalStorage
 let allUserResult = [];
 const allUserResultfunc = () => {
