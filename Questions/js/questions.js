@@ -118,7 +118,7 @@ const allUserResultfunc = () => {
     sessionStorage.removeItem("fatherName");
     sessionStorage.removeItem("brandCode");
     sessionStorage.removeItem("subject");
-    window.location = "../Homepage/homepage.html";
+    window.location = "../../homepage.html";
   }, 2000);
 };
 
@@ -143,6 +143,6 @@ const particularUserResultFunc = () =>{
     sessionStorage.removeItem("fatherName");
     sessionStorage.removeItem("brandCode");
     sessionStorage.removeItem("subject");
-    window.location = "../Homepage/homepage.html";
+    window.location = "../../homepage.html";
   }, 2000);
 };
