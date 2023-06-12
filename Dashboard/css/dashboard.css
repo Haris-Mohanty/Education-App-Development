@@ -41,6 +41,7 @@
     font-size: 18px;
     color: aliceblue;
     transition: 1s ease-in-out;
+    font-family: "Sofia", sans-serif;
 }
 .side-nav ul li i{
     margin: 8px;
@@ -61,18 +62,21 @@
     font-size: 20px;
     font-weight: bold;
     border: 2px solid black;
+    font-family: "Audiowide", sans-serif;
 }
 
 /* START MAIN BOX CODING */
 .main-box{
-    /* background-image: linear-gradient(to right,rgb(99, 11, 89),rgb(240, 79, 179)); */
+    background-color: #fff;
 }
 .brand-box li{
     border-radius: 0;
     background-color: rgb(120, 8, 164);
     color: #f4eaea;
+    font-family: "Sofia", sans-serif;
 }
 .main-box .teacher-box li{
+    font-family: "Audiowide", sans-serif;
     border-radius: 0;
     background-color: aqua;
     text-align: center;
@@ -89,6 +93,7 @@
 }
 .main-box .teacher-box .content-box .number-box{
     width: 120px;
+    font-family: "Audiowide", sans-serif;
     height: 120px;
     border: 5px solid rgb(69, 189, 254);
     border-radius: 50%;
@@ -99,6 +104,7 @@
     font-size: 20px;
 }
 .accordion-body .btn{
+    font-family: "Audiowide", sans-serif;
     background-color: rgb(31, 196, 238);
 }
 /* Show Subject Related Questions */
